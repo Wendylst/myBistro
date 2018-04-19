@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "661621900521",
+    "firebase_url": "https://mybistro-9cd9a.firebaseio.com",
+    "project_id": "mybistro-9cd9a",
+    "storage_bucket": "mybistro-9cd9a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:661621900521:android:c0f93875f6e176b3",
+        "android_client_info": {
+          "package_name": "ie.app.bistro.mybistro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "661621900521-5g0mrscsd24oab65re9se3ls7v8n0u6u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ie.app.bistro.mybistro",
+            "certificate_hash": "795d991db307d34ead49c23315148397fe8f7c23"
+          }
+        },
+        {
+          "client_id": "661621900521-0sresqpms87ik23qpml2d3kbjq9dss48.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPde_Wuefr3LlQFDzGRqWaXO7DjuYx2Xg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "661621900521-0sresqpms87ik23qpml2d3kbjq9dss48.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

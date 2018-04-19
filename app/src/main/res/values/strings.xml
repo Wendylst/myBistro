@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Bistro</string>
+    <string name="title_activity_splash_welcome">SplashWelcome</string>
+    <string name="main_view_image">main view image</string>
+    <string name="newOrder">New Order</string>
+    <string name="viewOrder">View Order</string>
+</resources>
