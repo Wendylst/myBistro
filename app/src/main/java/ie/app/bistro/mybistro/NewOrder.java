@@ -216,6 +216,7 @@ public class NewOrder extends AppCompatActivity {
                 else{
                     waterNP.setValue(0);
                 }
+
             }
         });
 
@@ -234,7 +235,72 @@ public class NewOrder extends AppCompatActivity {
 
     }
 
+    public void clearAll(View view){
+        waterNP.setValue(0);
+        if(waterCB.isChecked()){
+            waterCB.toggle();
+        }
 
+        mushNP.setValue(0);
+        if(mushCB.isChecked()){
+            mushCB.toggle();
+        }
+
+        soupNP.setValue(0);
+        if(soupCB.isChecked()){
+           soupCB.toggle();
+        }
+
+        wingsNP.setValue(0);
+        if(wingsCB.isChecked()){
+            wingsCB.toggle();
+        }
+
+        beefNP.setValue(0);
+        if(beefCB.isChecked()){
+            beefCB.toggle();
+        }
+
+        chickenNP.setValue(0);
+        if(chickenCB.isChecked()){
+            chickenCB.toggle();
+        }
+
+        burgerNP.setValue(0);
+        if(burgerCB.isChecked()){
+            burgerCB.toggle();
+        }
+
+        pizzaNP.setValue(0);
+        if(pizzaCB.isChecked()){
+            pizzaCB.toggle();
+        }
+
+        sizzlerNP.setValue(0);
+        if(sizzlerCB.isChecked()){
+            sizzlerCB.toggle();
+        }
+        cakeNP.setValue(0);
+        if(cakeCB.isChecked()){
+            cakeCB.toggle();
+        }
+        pieNP.setValue(0);
+        if(pieCB.isChecked()){
+            pieCB.toggle();
+        }
+        pancakeNP.setValue(0);
+        if(pancakeCB.isChecked()){
+            pancakeCB.toggle();
+        }
+        cokeNP.setValue(0);
+        if(cokeCB.isChecked()){
+            cokeCB.toggle();
+        }
+        waterNP.setValue(0);
+        if(waterCB.isChecked()){
+            waterCB.toggle();
+        }
+    }
 
 
     public void addOrder(View view)
