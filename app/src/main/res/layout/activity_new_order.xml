@@ -6,137 +6,400 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     tools:context=".NewOrder"
-    tools:layout_editor_absoluteY="81dp">
+    tools:layout_editor_absoluteY="81dp"
+    android:windowSoftInputMode="stateUnchanged"
+    >
 
     <ScrollView
-        android:id="@+id/viewId"
+        android:id="@+id/svor"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
-            android:id="@+id/layoutId"
             android:layout_width="match_parent"
-            android:layout_height="1000dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="54dp"
-                android:layout_marginTop="53dp"
-                android:text="TextView" />
+            >
 
-            <CheckBox
-                android:id="@+id/checkBox10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/textView"
-                android:layout_below="@+id/checkBox11"
-                android:text="CheckBox" />
+            <LinearLayout
+                android:id="@+id/linContain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp">
 
-            <CheckBox
-                android:id="@+id/checkBox11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/textView"
-                android:layout_below="@+id/textView"
-                android:text="CheckBox" />
+                <TextView
+                    android:id="@+id/startersText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:paddingLeft="5dp"
+                    android:text="Starters:"
+                    android:textColor="@android:color/white" />
 
-            <CheckBox
-                android:id="@+id/checkBox12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/textView"
-                android:layout_below="@+id/checkBox10"
-                android:text="CheckBox" />
+                <RelativeLayout
+                    android:id="@+id/why"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignStart="@+id/textView"
-                android:layout_marginTop="196dp"
-                android:text="TextView" />
+                    <CheckBox
+                        android:id="@+id/mushCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Garlic Mushrooms" />
 
-            <CheckBox
-                android:id="@+id/checkBox13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/textView"
-                android:layout_below="@+id/textView4"
-                android:text="CheckBox" />
+                    <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
+                        android:id="@+id/mushNP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="260dp" />
+                </RelativeLayout>
 
-            <CheckBox
-                android:id="@+id/checkBox14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/textView"
-                android:layout_below="@+id/checkBox13"
-                android:text="CheckBox" />
+                <RelativeLayout
+                    android:id="@+id/why2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <CheckBox
-                android:id="@+id/checkBox17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/textView"
-                android:layout_below="@+id/checkBox14"
-                android:text="CheckBox" />
+                    <CheckBox
+                        android:id="@+id/soupCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Soup of the day" />
 
-            <CheckBox
-                android:id="@+id/checkBox18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/textView"
-                android:layout_below="@+id/checkBox17"
-                android:text="CheckBox" />
+                    <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
+                        android:id="@+id/soupNP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="260dp" />
+                </RelativeLayout>
 
-            <CheckBox
-                android:id="@+id/checkBox19"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/textView"
-                android:layout_below="@+id/checkBox18"
-                android:text="CheckBox" />
+                <RelativeLayout
+                    android:id="@+id/why3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignStart="@+id/textView"
-                android:layout_marginTop="404dp"
-                android:text="TextView" />
+                    <CheckBox
+                        android:id="@+id/wingsCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="BBQ Chicken Wings" />
 
-            <CheckBox
-                android:id="@+id/checkBox20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/textView"
-                android:layout_below="@+id/textView5"
-                android:text="CheckBox" />
+                    <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
+                        android:id="@+id/wingsNP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="260dp">
 
-            <CheckBox
-                android:id="@+id/checkBox21"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/textView"
-                android:layout_below="@+id/checkBox20"
-                android:text="CheckBox" />
+                    </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
+                </RelativeLayout>
 
-            <CheckBox
-                android:id="@+id/checkBox22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/textView"
-                android:layout_centerVertical="true"
-                android:text="CheckBox" />
+                <TextView
+                    android:id="@+id/mainsText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:text="Mains:"
+                    android:paddingLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@android:color/white" />
+
+                <RelativeLayout
+                    android:id="@+id/why4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:id="@+id/beefCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Roast Beef" />
+
+                    <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
+                        android:id="@+id/beefNP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="260dp">
+
+                    </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/why5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:id="@+id/chickenCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Roast Chicken" />
+
+                    <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
+                        android:id="@+id/chickenNP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="260dp">
+
+                    </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/why6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:id="@+id/burgerCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="8oz Beef Burger" />
+
+                    <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
+                        android:id="@+id/burgerNP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="260dp">
+
+                    </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/why7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:id="@+id/pizzaCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Meat Feast Pizza" />
+
+                    <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
+                        android:id="@+id/pizzaNP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="260dp">
+
+                    </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/why8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:id="@+id/sizzlerCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Chicken Sizzler" />
+
+                    <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
+                        android:id="@+id/sizzlerNP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="260dp">
+
+                    </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/dessertsText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Desserts:"
+                    android:paddingLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@android:color/white"/>
+
+                <RelativeLayout
+                    android:id="@+id/why9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:id="@+id/cakeCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Choclate Cake" />
+
+                    <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
+                        android:id="@+id/cakeNP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="260dp">
+
+                    </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/why10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:id="@+id/pieCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Apple Pie" />
+
+                    <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
+                        android:id="@+id/pieNP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="260dp">
+
+                    </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/why11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:id="@+id/pancakeCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Pancake Pleasure" />
+
+                    <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
+                        android:id="@+id/pancakeNP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="260dp">
+
+                    </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/drinksText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Drinks:"
+                    android:paddingLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@android:color/white"/>
+
+                <RelativeLayout
+                    android:id="@+id/why12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:id="@+id/cokeCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Coke" />
+
+                    <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
+                        android:id="@+id/cokeNP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="260dp">
+
+                    </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/why13"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:id="@+id/waterCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Water" />
+
+                    <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
+                        android:id="@+id/waterNP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="260dp"
+
+                        >
+
+                    </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/addMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimaryDark"
+                    android:text="Add Message"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <Button
+                    android:id="@+id/addOrder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:onClick="addOrder"
+                    android:text="Add Order"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+            </LinearLayout>
 
         </RelativeLayout>
     </ScrollView>

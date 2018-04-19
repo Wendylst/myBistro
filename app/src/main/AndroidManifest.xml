@@ -25,7 +25,8 @@
 
         <activity android:name=".NewOrder"
             android:label="@string/newOrder"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"/>
 
         <activity android:name=".ViewOrders"
             android:label="@string/viewOrder"
