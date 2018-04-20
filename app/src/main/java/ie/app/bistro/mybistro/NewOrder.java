@@ -1,6 +1,8 @@
 package ie.app.bistro.mybistro;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,17 +21,25 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker;
 import com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPickerListener;
 
+import java.util.ArrayDeque;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 public class NewOrder extends AppCompatActivity {
 
     EditText editText;
     CheckBox mushCB,soupCB,wingsCB,beefCB,chickenCB,burgerCB,pizzaCB,sizzlerCB,cakeCB,pieCB,pancakeCB,cokeCB,waterCB;
-    //ScrollableNumberPicker soupNP,wingsNP,beefNP,chickenNP,burgerNP,pizzaNP,sizzlerNP,cakeNP,pieNP,pancakeNP,cokeNP,waterNP;
+
     int mushNPInt,soupNPInt,wingsNPInt,beefNPInt,chickenNPInt,burgerNPInt,pizzaNPInt,sizzlerNPInt,cakeNPInt,pieNPInt,pancakeNPInt,cokeNPInt,waterNPInt =0;
     Button addMessage, addOrder;
     ScrollableNumberPicker mushNP,soupNP,wingsNP,beefNP,chickenNP,burgerNP,pizzaNP,sizzlerNP,cakeNP,pieNP,pancakeNP,cokeNP,waterNP = null;
 
+
     FirebaseDatabase database;
     DatabaseReference myRef;
+
+    String orderID = UUID.randomUUID().toString();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +84,26 @@ public class NewOrder extends AppCompatActivity {
         waterCB = findViewById(R.id.waterCB);
 
 
+
+
+
+/*
+        cokeNP.setListener(new ScrollableNumberPickerListener() {
+            @Override
+
+            public void onNumberPicked(int value) {
+                cokeNPInt = cokeNP.getValue();
+                if (cokeNPInt < 0) {
+
+
+                } else {
+
+                   // cokeCB.toggle();
+                }
+                //myRef.setValue(value);
+            }
+        });
+*/
         mushCB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -235,7 +265,11 @@ public class NewOrder extends AppCompatActivity {
 
     }
 
+
+
+
     public void clearAll(View view){
+
         waterNP.setValue(0);
         if(waterCB.isChecked()){
             waterCB.toggle();
@@ -310,6 +344,7 @@ public class NewOrder extends AppCompatActivity {
         //DatabaseReference myRef = database.getReference().child("menu4").child("one!");
         //mushNP = findViewById(R.id.mushNP);
         callAllNumberPickers();
+        doTheFireBaseThing();
         //myRef.setValue(mushNPO);
     }
 
@@ -317,20 +352,26 @@ public class NewOrder extends AppCompatActivity {
 //NUMBER PICKERS
     public void callAllNumberPickers(){
         Log.i("numberpicker","number pick2");
-
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRefNew = myRef.push();
-        myRef.getRef().child("").setValue(mushNPInt);
-        myRef.getRef().child("").setValue(soupNPInt);
+        final Map<String, String> dataToSave = new HashMap<>();
+        final DatabaseReference myRefNew = myRef.push();
+        DatabaseReference myRef = database.getReference().child("Order").child("Type").child(orderID);
+        final String ID =  this.orderID;
 
 
         mushNP.setListener(new ScrollableNumberPickerListener() {
+
             @Override
 
             public void onNumberPicked(int value) {
                 mushNPInt = mushNP.getValue();
-                Log.i("numberpicker",String.valueOf(mushNPInt));
-                //myRef.setValue(value);
+
+                    Log.i("numberpicker", String.valueOf(mushNPInt));
+                    String mushNPO = String.valueOf(mushNPInt);
+                    dataToSave.put("id", ID);
+                    dataToSave.put("quantity", mushNPO);
+                    dataToSave.put("name", "Garlic Muchrooms");
+                    myRefNew.getRef().child("1").setValue(dataToSave);
             }
         });
         soupNP.setListener(new ScrollableNumberPickerListener() {
@@ -339,7 +380,10 @@ public class NewOrder extends AppCompatActivity {
             public void onNumberPicked(int value) {
                 soupNPInt = soupNP.getValue();
                 Log.i("numberpicker",String.valueOf(soupNPInt));
-                //myRef.setValue(value);
+                String soupNPO = String.valueOf(soupNPInt);
+                dataToSave.put("quantity", soupNPO);
+                dataToSave.put("name", "Soup of the Day");
+                myRefNew.getRef().child("2").setValue(dataToSave);
             }
         });
         wingsNP.setListener(new ScrollableNumberPickerListener() {
@@ -348,7 +392,10 @@ public class NewOrder extends AppCompatActivity {
             public void onNumberPicked(int value) {
                 wingsNPInt = wingsNP.getValue();
                 Log.i("numberpicker",String.valueOf(wingsNPInt));
-                //myRef.setValue(value);
+                String wingsNPO = String.valueOf(wingsNPInt);
+                dataToSave.put("quantity", wingsNPO);
+                dataToSave.put("name", "BBQ Wings");
+                myRefNew.getRef().child("3").setValue(dataToSave);
             }
         });
         beefNP.setListener(new ScrollableNumberPickerListener() {
@@ -357,7 +404,10 @@ public class NewOrder extends AppCompatActivity {
             public void onNumberPicked(int value) {
                 beefNPInt = beefNP.getValue();
                 Log.i("numberpicker",String.valueOf(beefNPInt));
-                //myRef.setValue(value);
+                String beefNPO = String.valueOf(beefNPInt);
+                dataToSave.put("quantity", beefNPO);
+                dataToSave.put("name", "Roast Beef");
+                myRefNew.getRef().child("4").setValue(dataToSave);
             }
         });
         chickenNP.setListener(new ScrollableNumberPickerListener() {
@@ -366,7 +416,10 @@ public class NewOrder extends AppCompatActivity {
             public void onNumberPicked(int value) {
                 chickenNPInt = chickenNP.getValue();
                 Log.i("numberpicker",String.valueOf(chickenNPInt));
-                //myRef.setValue(value);
+                String chickenNPO = String.valueOf(chickenNPInt);
+                dataToSave.put("quantity", chickenNPO);
+                dataToSave.put("name", "Roast Chicken");
+                myRefNew.getRef().child("5").setValue(dataToSave);
             }
         });
         burgerNP.setListener(new ScrollableNumberPickerListener() {
@@ -375,7 +428,10 @@ public class NewOrder extends AppCompatActivity {
             public void onNumberPicked(int value) {
                 burgerNPInt = burgerNP.getValue();
                 Log.i("numberpicker",String.valueOf(burgerNPInt));
-                //myRef.setValue(value);
+                String burgerNPO = String.valueOf(burgerNPInt);
+                dataToSave.put("quantity", burgerNPO);
+                dataToSave.put("name", "8oz Beef Burger");
+                myRefNew.getRef().child("6").setValue(dataToSave);
             }
         });
         pizzaNP.setListener(new ScrollableNumberPickerListener() {
@@ -384,7 +440,10 @@ public class NewOrder extends AppCompatActivity {
             public void onNumberPicked(int value) {
                 pizzaNPInt = pizzaNP.getValue();
                 Log.i("numberpicker",String.valueOf(pizzaNPInt));
-                //myRef.setValue(value);
+                String pizzaNPO = String.valueOf(pizzaNPInt);
+                dataToSave.put("quantity", pizzaNPO);
+                dataToSave.put("name", "Meat Feast Pizza");
+                myRefNew.getRef().child("7").setValue(dataToSave);
             }
         });
         sizzlerNP.setListener(new ScrollableNumberPickerListener() {
@@ -393,7 +452,10 @@ public class NewOrder extends AppCompatActivity {
             public void onNumberPicked(int value) {
                 sizzlerNPInt = sizzlerNP.getValue();
                 Log.i("numberpicker",String.valueOf(sizzlerNPInt));
-                //myRef.setValue(value);
+                String sizzlerNPO = String.valueOf(sizzlerNPInt);
+                dataToSave.put("quantity", sizzlerNPO);
+                dataToSave.put("name", "Chicken Sizzler");
+                myRefNew.getRef().child("8").setValue(dataToSave);
             }
         });
         cakeNP.setListener(new ScrollableNumberPickerListener() {
@@ -402,7 +464,10 @@ public class NewOrder extends AppCompatActivity {
             public void onNumberPicked(int value) {
                 cakeNPInt = cakeNP.getValue();
                 Log.i("numberpicker",String.valueOf(cakeNPInt));
-                //myRef.setValue(value);
+                String cakeNPO = String.valueOf(cakeNPInt);
+                dataToSave.put("quantity", cakeNPO);
+                dataToSave.put("name", "Chocolate Cake");
+                myRefNew.getRef().child("9").setValue(dataToSave);
             }
         });
         pieNP.setListener(new ScrollableNumberPickerListener() {
@@ -411,7 +476,10 @@ public class NewOrder extends AppCompatActivity {
             public void onNumberPicked(int value) {
                 pieNPInt = pieNP.getValue();
                 Log.i("numberpicker",String.valueOf(pieNPInt));
-                //myRef.setValue(value);
+                String pieNPO = String.valueOf(pieNPInt);
+                dataToSave.put("quantity", pieNPO);
+                dataToSave.put("name", "Apple Pie");
+                myRefNew.getRef().child("10").setValue(dataToSave);
             }
         });
         pancakeNP.setListener(new ScrollableNumberPickerListener() {
@@ -420,7 +488,10 @@ public class NewOrder extends AppCompatActivity {
             public void onNumberPicked(int value) {
                 pancakeNPInt = pancakeNP.getValue();
                 Log.i("numberpicker",String.valueOf(pancakeNPInt));
-                //myRef.setValue(value);
+                String pancakeNPO = String.valueOf(pancakeNPInt);
+                dataToSave.put("quantity", pancakeNPO);
+                dataToSave.put("name", "Pancake Pleasure");
+                myRefNew.getRef().child("11").setValue(dataToSave);
             }
         });
         cokeNP.setListener(new ScrollableNumberPickerListener() {
@@ -429,7 +500,10 @@ public class NewOrder extends AppCompatActivity {
             public void onNumberPicked(int value) {
                 cokeNPInt = cokeNP.getValue();
                 Log.i("numberpicker",String.valueOf(cokeNPInt));
-                //myRef.setValue(value);
+                String cokeNPO = String.valueOf(cokeNPInt);
+                dataToSave.put("quantity", cokeNPO);
+                dataToSave.put("name", "Coke");
+                myRefNew.getRef().child("12").setValue(dataToSave);
             }
         });
         waterNP.setListener(new ScrollableNumberPickerListener() {
@@ -438,13 +512,46 @@ public class NewOrder extends AppCompatActivity {
             public void onNumberPicked(int value) {
                 waterNPInt = soupNP.getValue();
                 Log.i("numberpicker",String.valueOf(waterNPInt));
-                //myRef.setValue(value);
+                String waterNPO = String.valueOf(waterNPInt);
+                dataToSave.put("quantity", waterNPO);
+                dataToSave.put("name", "Water");
+                myRefNew.getRef().child("13").setValue(dataToSave);
             }
         });
 
 
     }
 
+public void doTheFireBaseThing() {
 
+    //FirebaseDatabase database = FirebaseDatabase.getInstance();
+    //DatabaseReference myRefNew = myRef.push();
+    //myRef.getRef().child("").setValue(mushNPInt);
+    //myRef.getRef().child("").setValue(soupNPInt);
 
+    //DatabaseReference myRef = database.getReference().child("Order").child("Type");
+
+    // myRef.getRef().child("").setValue(mushNP);
+    //myRef.getRef().child("").setValue(chickenNP);
+
+    //myRef.setValue(mushNP);
+    //myRef.setValue(chickenNP);
+    //String mushString = "Garlic Mushrooms";
+    //DatabaseReference myRefNew = myRef.push();
+   // Map<String, String> dataToSave = new HashMap<>();
+    //dataToSave.put("course", cardName);
+    //dataToSave.put("type", mushCB);
+    //String mushString = Integer.toString(mushNPInt);
+    //String hundred = String.valueOf(mushNPInt);
+    //String tmpStr10 = String.valueOf(mushNPInt);
+    //dataToSave.put("type", mushCB);
+
+    /*if(strI.isEmpty()) {
+
+    }else{dataToSave.put("type", mushString);
+        dataToSave.put("quantity", strI);
+        dataToSave.put("order ID", orderID);
+        myRefNew.getRef().child("").setValue(dataToSave);}
+}*/
+}
 }
