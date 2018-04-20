@@ -343,8 +343,13 @@ public class NewOrder extends AppCompatActivity {
         //FirebaseDatabase database = FirebaseDatabase.getInstance();
         //DatabaseReference myRef = database.getReference().child("menu4").child("one!");
         //mushNP = findViewById(R.id.mushNP);
+
         callAllNumberPickers();
         doTheFireBaseThing();
+        Toast.makeText(getApplicationContext(),"Order Created.", Toast.LENGTH_SHORT).show();
+        Intent orders = new Intent(this, NewOrder.class);
+        startActivity(orders);
+        finish();
         //myRef.setValue(mushNPO);
     }
 
@@ -356,7 +361,7 @@ public class NewOrder extends AppCompatActivity {
         final Map<String, String> dataToSave = new HashMap<>();
         final DatabaseReference myRefNew = myRef.push();
         DatabaseReference myRef = database.getReference().child("Order").child("Type").child(orderID);
-        final String ID =  this.orderID;
+         final String ID =  this.orderID;
 
 
         mushNP.setListener(new ScrollableNumberPickerListener() {
