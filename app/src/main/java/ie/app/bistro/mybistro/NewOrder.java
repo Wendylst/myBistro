@@ -82,7 +82,7 @@ public class NewOrder extends AppCompatActivity {
         pancakeCB = findViewById(R.id.pancakeCB);
         cokeCB = findViewById(R.id.cokeCB);
         waterCB = findViewById(R.id.waterCB);
-
+        callAllNumberPickers();
 
 
 
@@ -344,12 +344,16 @@ public class NewOrder extends AppCompatActivity {
         //DatabaseReference myRef = database.getReference().child("menu4").child("one!");
         //mushNP = findViewById(R.id.mushNP);
 
-        callAllNumberPickers();
+        //callAllNumberPickers();
         doTheFireBaseThing();
-        Toast.makeText(getApplicationContext(),"Order Created.", Toast.LENGTH_SHORT).show();
-        Intent orders = new Intent(this, NewOrder.class);
-        startActivity(orders);
+        //clearEverything();
         finish();
+
+        Toast.makeText(getApplicationContext(),"Order Created.", Toast.LENGTH_SHORT).show();
+
+        /*Intent orders = new Intent(this, NewOrder.class);
+        startActivity(orders);
+        finish();*/
         //myRef.setValue(mushNPO);
     }
 
@@ -360,7 +364,7 @@ public class NewOrder extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final Map<String, String> dataToSave = new HashMap<>();
         final DatabaseReference myRefNew = myRef.push();
-        DatabaseReference myRef = database.getReference().child("Order").child("Type").child(orderID);
+        //DatabaseReference myRef = database.getReference().child("Order").child("Type");
          final String ID =  this.orderID;
 
 
@@ -373,7 +377,7 @@ public class NewOrder extends AppCompatActivity {
 
                     Log.i("numberpicker", String.valueOf(mushNPInt));
                     String mushNPO = String.valueOf(mushNPInt);
-                    dataToSave.put("id", ID);
+                    //dataToSave.put("id", ID);
                     dataToSave.put("quantity", mushNPO);
                     dataToSave.put("name", "Garlic Muchrooms");
                     myRefNew.getRef().child("1").setValue(dataToSave);
@@ -559,4 +563,72 @@ public void doTheFireBaseThing() {
         myRefNew.getRef().child("").setValue(dataToSave);}
 }*/
 }
+
+public void clearEverything(){
+    waterNP.setValue(0);
+    if(waterCB.isChecked()){
+        waterCB.toggle();
+    }
+
+    mushNP.setValue(0);
+    if(mushCB.isChecked()){
+        mushCB.toggle();
+    }
+
+    soupNP.setValue(0);
+    if(soupCB.isChecked()){
+        soupCB.toggle();
+    }
+
+    wingsNP.setValue(0);
+    if(wingsCB.isChecked()){
+        wingsCB.toggle();
+    }
+
+    beefNP.setValue(0);
+    if(beefCB.isChecked()){
+        beefCB.toggle();
+    }
+
+    chickenNP.setValue(0);
+    if(chickenCB.isChecked()){
+        chickenCB.toggle();
+    }
+
+    burgerNP.setValue(0);
+    if(burgerCB.isChecked()){
+        burgerCB.toggle();
+    }
+
+    pizzaNP.setValue(0);
+    if(pizzaCB.isChecked()){
+        pizzaCB.toggle();
+    }
+
+    sizzlerNP.setValue(0);
+    if(sizzlerCB.isChecked()){
+        sizzlerCB.toggle();
+    }
+    cakeNP.setValue(0);
+    if(cakeCB.isChecked()){
+        cakeCB.toggle();
+    }
+    pieNP.setValue(0);
+    if(pieCB.isChecked()){
+        pieCB.toggle();
+    }
+    pancakeNP.setValue(0);
+    if(pancakeCB.isChecked()){
+        pancakeCB.toggle();
+    }
+    cokeNP.setValue(0);
+    if(cokeCB.isChecked()){
+        cokeCB.toggle();
+    }
+    waterNP.setValue(0);
+    if(waterCB.isChecked()){
+        waterCB.toggle();
+    }
 }
+}
+
