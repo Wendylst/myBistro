@@ -386,23 +386,6 @@
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
-                    <Button
-                        android:id="@+id/clearAll"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@color/colorPrimaryDark"
-                        android:onClick="clearAll"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"
-                        android:text="Clear All"
-                        android:textAppearance="@style/TextAppearance.AppCompat"
-                        android:textColor="@android:color/white"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
                 </RelativeLayout>
 
                 <Button
@@ -414,7 +397,7 @@
                     android:layout_marginTop="10dp"
                     android:background="@color/colorPrimaryDark"
                     android:onClick="addOrder"
-                    android:text="Add Order"
+                    android:text="Create Order"
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"

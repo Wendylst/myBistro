@@ -2,18 +2,23 @@ package ie.app.bistro.mybistro;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -35,7 +40,8 @@ public class NewOrder extends AppCompatActivity {
     Button addMessage, addOrder;
     ScrollableNumberPicker mushNP,soupNP,wingsNP,beefNP,chickenNP,burgerNP,pizzaNP,sizzlerNP,cakeNP,pieNP,pancakeNP,cokeNP,waterNP = null;
 
-
+    Button btnOpenDialog;
+    TextView textInfo;
     FirebaseDatabase database;
     DatabaseReference myRef;
 
@@ -84,7 +90,15 @@ public class NewOrder extends AppCompatActivity {
         waterCB = findViewById(R.id.waterCB);
         callAllNumberPickers();
 
+        btnOpenDialog = (Button)findViewById(R.id.addMessage);
+        textInfo = (TextView)findViewById(R.id.info);
 
+        btnOpenDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog();
+            }
+        });
 
 
 /*
@@ -265,7 +279,36 @@ public class NewOrder extends AppCompatActivity {
 
     }
 
+    private void openDialog(){
+        LayoutInflater inflater = LayoutInflater.from(NewOrder.this);
+        View subView = inflater.inflate(R.layout.dialog_box, null);
+        final EditText subEditText = (EditText)subView.findViewById(R.id.dialogEditText);
+        //final ImageView subImageView = (ImageView)subView.findViewById(R.id.image);
+        //Drawable drawable = getResources().getDrawable(R.mipmap.ic_launcher);
+        //subImageView.setImageDrawable(drawable);
 
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("AlertDialog");
+       // builder.setMessage("AlertDialog Message");
+        builder.setView(subView);
+        AlertDialog alertDialog = builder.create();
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                textInfo.setText(subEditText.getText().toString());
+            }
+        });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(NewOrder.this, "Cancel", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        builder.show();
+    }
 
 
     public void clearAll(View view){
@@ -630,5 +673,7 @@ public void clearEverything(){
         waterCB.toggle();
     }
 }
+
+
 }
 
