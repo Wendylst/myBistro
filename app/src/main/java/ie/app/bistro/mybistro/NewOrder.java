@@ -44,7 +44,7 @@ public class NewOrder extends AppCompatActivity {
     TextView textInfo;
     FirebaseDatabase database;
     DatabaseReference myRef;
-
+    String ID;
     String orderID = UUID.randomUUID().toString();
 
     @Override
@@ -54,7 +54,6 @@ public class NewOrder extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference().child("menu").child("order");
-
         mushNP = findViewById(R.id.mushNP);
         soupNP = findViewById(R.id.soupNP);
         wingsNP = findViewById(R.id.wingsNP);
@@ -74,6 +73,29 @@ public class NewOrder extends AppCompatActivity {
         soupNP.setMinValue(0);
         mushNP.setMaxValue(20);
         mushNP.setMinValue(0);
+        wingsNP.setMinValue(0);
+        wingsNP.setMaxValue(20);
+        beefNP.setMinValue(0);
+        beefNP.setMaxValue(20);
+        chickenNP.setMinValue(0);
+        chickenNP.setMaxValue(20);
+        burgerNP.setMinValue(0);
+        burgerNP.setMaxValue(20);
+        pizzaNP.setMinValue(0);
+        pizzaNP.setMaxValue(20);
+        sizzlerNP.setMinValue(0);
+        sizzlerNP.setMaxValue(20);
+        cakeNP.setMinValue(0);
+        cakeNP.setMaxValue(20);
+        pieNP.setMinValue(0);
+        pieNP.setMaxValue(20);
+        pancakeNP.setMinValue(0);
+        pancakeNP.setMaxValue(20);
+        cokeNP.setMinValue(0);
+        cokeNP.setMaxValue(20);
+        waterNP.setMinValue(0);
+        waterNP.setMaxValue(20);
+
 
         mushCB = findViewById(R.id.mushCB);
         soupCB = findViewById(R.id.soupCB);
@@ -257,9 +279,6 @@ public class NewOrder extends AppCompatActivity {
         LayoutInflater inflater = LayoutInflater.from(NewOrder.this);
         View subView = inflater.inflate(R.layout.dialog_box, null);
         final EditText subEditText = (EditText)subView.findViewById(R.id.dialogEditText);
-        //final ImageView subImageView = (ImageView)subView.findViewById(R.id.image);
-        //Drawable drawable = getResources().getDrawable(R.mipmap.ic_launcher);
-        //subImageView.setImageDrawable(drawable);
         final Map<String, String> dataToSave = new HashMap<>();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
@@ -370,12 +389,7 @@ public class NewOrder extends AppCompatActivity {
 
     public void addOrder(View view)
     {
-        //mushNPO.getValue();
-        //FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //DatabaseReference myRef = database.getReference().child("menu4").child("one!");
-        //mushNP = findViewById(R.id.mushNP);
 
-        //callAllNumberPickers();
         doTheFireBaseThing();
         //clearEverything();
         finish();
@@ -385,18 +399,17 @@ public class NewOrder extends AppCompatActivity {
         /*Intent orders = new Intent(this, NewOrder.class);
         startActivity(orders);
         finish();*/
-        //myRef.setValue(mushNPO);
     }
 
 
 //NUMBER PICKERS
     public void callAllNumberPickers(){
         Log.i("numberpicker","number pick2");
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        //FirebaseDatabase database = FirebaseDatabase.getInstance();
         final Map<String, String> dataToSave = new HashMap<>();
         final DatabaseReference myRefNew = myRef.push();
         //DatabaseReference myRef = database.getReference().child("Order").child("Type");
-         final String ID =  this.orderID;
+         ID =  this.orderID;
 
 
         mushNP.setListener(new ScrollableNumberPickerListener() {
