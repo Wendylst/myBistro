@@ -35,7 +35,7 @@ public class NewOrder extends AppCompatActivity {
 
     EditText editText;
     CheckBox mushCB,soupCB,wingsCB,beefCB,chickenCB,burgerCB,pizzaCB,sizzlerCB,cakeCB,pieCB,pancakeCB,cokeCB,waterCB;
-
+    String message;
     int mushNPInt,soupNPInt,wingsNPInt,beefNPInt,chickenNPInt,burgerNPInt,pizzaNPInt,sizzlerNPInt,cakeNPInt,pieNPInt,pancakeNPInt,cokeNPInt,waterNPInt =0;
     Button addMessage, addOrder;
     ScrollableNumberPicker mushNP,soupNP,wingsNP,beefNP,chickenNP,burgerNP,pizzaNP,sizzlerNP,cakeNP,pieNP,pancakeNP,cokeNP,waterNP = null;
@@ -101,23 +101,7 @@ public class NewOrder extends AppCompatActivity {
         });
 
 
-/*
-        cokeNP.setListener(new ScrollableNumberPickerListener() {
-            @Override
 
-            public void onNumberPicked(int value) {
-                cokeNPInt = cokeNP.getValue();
-                if (cokeNPInt < 0) {
-
-
-                } else {
-
-                   // cokeCB.toggle();
-                }
-                //myRef.setValue(value);
-            }
-        });
-*/
         mushCB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -264,16 +248,6 @@ public class NewOrder extends AppCompatActivity {
             }
         });
 
-        //editText = findViewById(R.id.editText);
-        //editText.setSelected(false);
-        //editText.setImeOptions(EditorInfo.IME_ACTION_DONE);
-        //myRef.setValue("Hello, world!");
-        //myRef.child("2").setValue("Hello, earth!");
-
-        //this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-
-        //AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        //mushNP.getValue();
 
 
 
@@ -286,17 +260,31 @@ public class NewOrder extends AppCompatActivity {
         //final ImageView subImageView = (ImageView)subView.findViewById(R.id.image);
         //Drawable drawable = getResources().getDrawable(R.mipmap.ic_launcher);
         //subImageView.setImageDrawable(drawable);
+        final Map<String, String> dataToSave = new HashMap<>();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("AlertDialog");
+        final DatabaseReference myRefNew = myRef.push();
+
+        AlertDialog.Builder builder;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            builder = new AlertDialog.Builder(NewOrder.this, android.R.style.Theme_Material_Dialog_Alert);
+        } else {
+            builder = new AlertDialog.Builder(NewOrder.this);
+        }
+        builder.setTitle("Message:");
        // builder.setMessage("AlertDialog Message");
         builder.setView(subView);
-        AlertDialog alertDialog = builder.create();
 
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                textInfo.setText(subEditText.getText().toString());
+                getWindow().setSoftInputMode(
+                        WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
+                );
+
+                  message = subEditText.getText().toString();
+                dataToSave.put("Message",message);
+                myRefNew.getRef().child("Message").setValue(dataToSave);
             }
         });
 
@@ -421,6 +409,11 @@ public class NewOrder extends AppCompatActivity {
                     Log.i("numberpicker", String.valueOf(mushNPInt));
                     String mushNPO = String.valueOf(mushNPInt);
                     //dataToSave.put("id", ID);
+                if(mushNPO.equalsIgnoreCase("0")){
+                    mushCB.setChecked(false);
+                }else{
+                    mushCB.setChecked(true);
+                }
                     dataToSave.put("quantity", mushNPO);
                     dataToSave.put("name", "Garlic Muchrooms");
                     myRefNew.getRef().child("1").setValue(dataToSave);
@@ -433,6 +426,11 @@ public class NewOrder extends AppCompatActivity {
                 soupNPInt = soupNP.getValue();
                 Log.i("numberpicker",String.valueOf(soupNPInt));
                 String soupNPO = String.valueOf(soupNPInt);
+                if(soupNPO.equalsIgnoreCase("0")){
+                    soupCB.setChecked(false);
+                }else{
+                    soupCB.setChecked(true);
+                }
                 dataToSave.put("quantity", soupNPO);
                 dataToSave.put("name", "Soup of the Day");
                 myRefNew.getRef().child("2").setValue(dataToSave);
@@ -445,6 +443,11 @@ public class NewOrder extends AppCompatActivity {
                 wingsNPInt = wingsNP.getValue();
                 Log.i("numberpicker",String.valueOf(wingsNPInt));
                 String wingsNPO = String.valueOf(wingsNPInt);
+                if(wingsNPO.equalsIgnoreCase("0")){
+                    wingsCB.setChecked(false);
+                }else{
+                    wingsCB.setChecked(true);
+                }
                 dataToSave.put("quantity", wingsNPO);
                 dataToSave.put("name", "BBQ Wings");
                 myRefNew.getRef().child("3").setValue(dataToSave);
@@ -457,6 +460,11 @@ public class NewOrder extends AppCompatActivity {
                 beefNPInt = beefNP.getValue();
                 Log.i("numberpicker",String.valueOf(beefNPInt));
                 String beefNPO = String.valueOf(beefNPInt);
+                if(beefNPO.equalsIgnoreCase("0")){
+                    beefCB.setChecked(false);
+                }else{
+                    beefCB.setChecked(true);
+                }
                 dataToSave.put("quantity", beefNPO);
                 dataToSave.put("name", "Roast Beef");
                 myRefNew.getRef().child("4").setValue(dataToSave);
@@ -469,6 +477,11 @@ public class NewOrder extends AppCompatActivity {
                 chickenNPInt = chickenNP.getValue();
                 Log.i("numberpicker",String.valueOf(chickenNPInt));
                 String chickenNPO = String.valueOf(chickenNPInt);
+                if(chickenNPO.equalsIgnoreCase("0")){
+                    chickenCB.setChecked(false);
+                }else{
+                    chickenCB.setChecked(true);
+                }
                 dataToSave.put("quantity", chickenNPO);
                 dataToSave.put("name", "Roast Chicken");
                 myRefNew.getRef().child("5").setValue(dataToSave);
@@ -481,6 +494,11 @@ public class NewOrder extends AppCompatActivity {
                 burgerNPInt = burgerNP.getValue();
                 Log.i("numberpicker",String.valueOf(burgerNPInt));
                 String burgerNPO = String.valueOf(burgerNPInt);
+                if(burgerNPO.equalsIgnoreCase("0")){
+                    burgerCB.setChecked(false);
+                }else{
+                    burgerCB.setChecked(true);
+                }
                 dataToSave.put("quantity", burgerNPO);
                 dataToSave.put("name", "8oz Beef Burger");
                 myRefNew.getRef().child("6").setValue(dataToSave);
@@ -493,6 +511,11 @@ public class NewOrder extends AppCompatActivity {
                 pizzaNPInt = pizzaNP.getValue();
                 Log.i("numberpicker",String.valueOf(pizzaNPInt));
                 String pizzaNPO = String.valueOf(pizzaNPInt);
+                if(pizzaNPO.equalsIgnoreCase("0")){
+                    pizzaCB.setChecked(false);
+                }else{
+                    pizzaCB.setChecked(true);
+                }
                 dataToSave.put("quantity", pizzaNPO);
                 dataToSave.put("name", "Meat Feast Pizza");
                 myRefNew.getRef().child("7").setValue(dataToSave);
@@ -505,6 +528,11 @@ public class NewOrder extends AppCompatActivity {
                 sizzlerNPInt = sizzlerNP.getValue();
                 Log.i("numberpicker",String.valueOf(sizzlerNPInt));
                 String sizzlerNPO = String.valueOf(sizzlerNPInt);
+                if(sizzlerNPO.equalsIgnoreCase("0")){
+                    sizzlerCB.setChecked(false);
+                }else{
+                    sizzlerCB.setChecked(true);
+                }
                 dataToSave.put("quantity", sizzlerNPO);
                 dataToSave.put("name", "Chicken Sizzler");
                 myRefNew.getRef().child("8").setValue(dataToSave);
@@ -517,6 +545,11 @@ public class NewOrder extends AppCompatActivity {
                 cakeNPInt = cakeNP.getValue();
                 Log.i("numberpicker",String.valueOf(cakeNPInt));
                 String cakeNPO = String.valueOf(cakeNPInt);
+                if(cakeNPO.equalsIgnoreCase("0")){
+                    cakeCB.setChecked(false);
+                }else{
+                    cakeCB.setChecked(true);
+                }
                 dataToSave.put("quantity", cakeNPO);
                 dataToSave.put("name", "Chocolate Cake");
                 myRefNew.getRef().child("9").setValue(dataToSave);
@@ -529,6 +562,11 @@ public class NewOrder extends AppCompatActivity {
                 pieNPInt = pieNP.getValue();
                 Log.i("numberpicker",String.valueOf(pieNPInt));
                 String pieNPO = String.valueOf(pieNPInt);
+                if(pieNPO.equalsIgnoreCase("0")){
+                   pieCB.setChecked(false);
+                }else{
+                    pieCB.setChecked(true);
+                }
                 dataToSave.put("quantity", pieNPO);
                 dataToSave.put("name", "Apple Pie");
                 myRefNew.getRef().child("10").setValue(dataToSave);
@@ -541,6 +579,11 @@ public class NewOrder extends AppCompatActivity {
                 pancakeNPInt = pancakeNP.getValue();
                 Log.i("numberpicker",String.valueOf(pancakeNPInt));
                 String pancakeNPO = String.valueOf(pancakeNPInt);
+                if(pancakeNPO.equalsIgnoreCase("0")){
+                    pancakeCB.setChecked(false);
+                }else{
+                    pancakeCB.setChecked(true);
+                }
                 dataToSave.put("quantity", pancakeNPO);
                 dataToSave.put("name", "Pancake Pleasure");
                 myRefNew.getRef().child("11").setValue(dataToSave);
@@ -553,6 +596,11 @@ public class NewOrder extends AppCompatActivity {
                 cokeNPInt = cokeNP.getValue();
                 Log.i("numberpicker",String.valueOf(cokeNPInt));
                 String cokeNPO = String.valueOf(cokeNPInt);
+                if(cokeNPO.equalsIgnoreCase("0")){
+                    cokeCB.setChecked(false);
+                }else{
+                    cokeCB.setChecked(true);
+                }
                 dataToSave.put("quantity", cokeNPO);
                 dataToSave.put("name", "Coke");
                 myRefNew.getRef().child("12").setValue(dataToSave);
@@ -562,9 +610,14 @@ public class NewOrder extends AppCompatActivity {
             @Override
 
             public void onNumberPicked(int value) {
-                waterNPInt = soupNP.getValue();
+                waterNPInt = waterNP.getValue();
                 Log.i("numberpicker",String.valueOf(waterNPInt));
                 String waterNPO = String.valueOf(waterNPInt);
+                if(waterNPO.equalsIgnoreCase("0")){
+                    waterCB.setChecked(false);
+                }else{
+                    waterCB.setChecked(true);
+                }
                 dataToSave.put("quantity", waterNPO);
                 dataToSave.put("name", "Water");
                 myRefNew.getRef().child("13").setValue(dataToSave);
