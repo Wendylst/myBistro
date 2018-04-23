@@ -11,13 +11,12 @@ public class NewOrderModel {
     private int mushNP,soupNP,wingsNP,beefNP,chickenNP,burgerNP,pizzaNP,sizzlerNP,cakeNP,pieNP,pancakeNP,cokeNP,waterNP;
 
     public NewOrderModel() {
-
     }
 
     public NewOrderModel(String heading, String description, String mushCB, String soupCB, String wingsCB, String beefCB, String chickenCB, String burgerCB, String pizzaCB, String sizzlerCB, String cakeCB, String pieCB, String pancakeCB, String cokeCB, String waterCB, int mushNP, int soupNP, int wingsNP, int beefNP, int chickenNP, int burgerNP, int pizzaNP, int sizzlerNP, int cakeNP, int pieNP, int pancakeNP, int cokeNP, int waterNP) {
         this.heading = heading;
         this.description = description;
-        //this.orderID = orderID;
+        this.orderID = orderID;
         this.mushCB = mushCB;
         this.soupCB = soupCB;
         this.wingsCB = wingsCB;
@@ -29,8 +28,8 @@ public class NewOrderModel {
         this.cakeCB = cakeCB;
         this.pieCB = pieCB;
         this.pancakeCB = pancakeCB;
-        this.cokeCB = cokeCB;
-        this.waterCB = waterCB;
+       this.cokeCB = cokeCB;
+       this.waterCB = waterCB;
         this.mushNP = mushNP;
         this.soupNP = soupNP;
         this.wingsNP = wingsNP;

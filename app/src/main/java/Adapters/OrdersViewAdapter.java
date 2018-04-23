@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.List;
 
 import Models.ListItemMain;
@@ -20,9 +22,9 @@ public class OrdersViewAdapter extends RecyclerView.Adapter<OrdersViewAdapter.Vi
     private List<NewOrderModel> orderItems;
     private Context context;
 
-    public OrdersViewAdapter(Context context, List<NewOrderModel> orderItems) {
+    public OrdersViewAdapter(ValueEventListener context, List<NewOrderModel> orderItems) {
         this.orderItems = orderItems;
-        this.context = context;
+        this.context = (Context) context;
     }
 
     @Override

@@ -28,35 +28,39 @@ import Models.ListItemMain;
 import Models.NewOrderModel;
 
 public class ViewOrders extends AppCompatActivity /*implements View.OnClickListener*/ {
+
     private static final String TAG = "View Orders Activity";
     private RecyclerView.Adapter adapter;
-    private RecyclerView recyclerView;
+    private RecyclerView recView;
     private FirebaseDatabase database;
     private DatabaseReference myRef;
     private List<NewOrderModel> listItems;
     DatabaseReference myDb = FirebaseDatabase.getInstance().getReference();
-    //private List<NewOrderModel> orderList;
-    private String  kValue;
-    //listItems = new ArrayList<>();
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_orders);
         listItems = new ArrayList<>();
-        recyclerView = findViewById(R.id.ordersView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recView = findViewById(R.id.ordersView);
+        recView.setHasFixedSize(true);
+        recView.setLayoutManager(new LinearLayoutManager(this));
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference().child("My Bistro").child("Orders");
+
 
        // listItems = new ArrayList<>();
         //NewOrderModel object = new NewOrderModel();
         //NewOrderModel object1 = new NewOrderModel("View Orders");
         //listItems.add(object);
         //listItems.add(object1);
-        onStart();
-        adapter = new OrdersViewAdapter(this, listItems);
-        recyclerView.setAdapter(adapter);
+        //onStart();
+
+
 
     }
 
@@ -73,8 +77,8 @@ public class ViewOrders extends AppCompatActivity /*implements View.OnClickListe
                     NewOrderModel snap = dataSnapshot.getValue(NewOrderModel.class);
                 listItems.add(snap);
                 Log.d(TAG, "Value is: " + snap);
-                //recyclerView = new RecyclerView(ViewOrders.this, listItems);
-                //recyclerView.setAdapter(adapter);
+                adapter = new OrdersViewAdapter(this, listItems);
+                recView.setAdapter(adapter);
             }
 
             @Override
