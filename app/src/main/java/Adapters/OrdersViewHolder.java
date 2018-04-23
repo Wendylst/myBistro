@@ -1,27 +1,48 @@
 package Adapters;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.List;
-
-import Models.NewOrderModel;
 import ie.app.bistro.mybistro.R;
 
 public class OrdersViewHolder extends RecyclerView.ViewHolder {
 
-    public TextView test;
+    public TextView mushTV;
+    public TextView soupTV;
+    public TextView chickenWingsTV;
+    public TextView beefTV;
+    public TextView chickenTV;
+    public TextView beefBurgerTV;
+    public TextView pizzaTV;
+    public TextView chickenSizzlerTV;
+    public TextView cakeTV;
+    public TextView pieTV;
+    public TextView pancakeTV;
+    public TextView cokeTV;
+    public TextView waterTV;
 
 
     public OrdersViewHolder(View itemView) {
         super(itemView);
-        test = itemView.findViewById(R.id.textViewStart);
+        mushTV = itemView.findViewById(R.id.mushTV);
+        soupTV = itemView.findViewById(R.id.soupTV);
+        chickenWingsTV = itemView.findViewById(R.id.chickenWingsTV);
+        beefTV = itemView.findViewById(R.id.beefTV);
+        chickenTV = itemView.findViewById(R.id.chickenTV);
+        beefBurgerTV = itemView.findViewById(R.id.beefBurgerTV);
+        pizzaTV = itemView.findViewById(R.id.pizzaTV);
+        chickenSizzlerTV = itemView.findViewById(R.id.chickenSizzlerTV);
+        cakeTV = itemView.findViewById(R.id.cakeTV);
+        pieTV = itemView.findViewById(R.id.pieTV);
+        pancakeTV = itemView.findViewById(R.id.pancakeTV);
+        cokeTV = itemView.findViewById(R.id.cokeTV);
+        waterTV = itemView.findViewById(R.id.waterTV);
+
+
+
+
+
     }
 
 
@@ -52,16 +73,16 @@ public class OrdersViewHolder extends RecyclerView.ViewHolder {
 
 
 
-    //private List<NewOrderModel> orderItems;
+//private List<NewOrderModel> orderItems;
 
-   //public TextView test;
-   // private Context context;
+//public TextView test;
+// private Context context;
 
-   // public OrdersViewHolder(ValueEventListener context, List<NewOrderModel> orderItems) {
-   //     super();
-   //    this.orderItems = orderItems;
-   //     this.context = (Context) context;
-   // }
+// public OrdersViewHolder(ValueEventListener context, List<NewOrderModel> orderItems) {
+//     super();
+//    this.orderItems = orderItems;
+//     this.context = (Context) context;
+// }
 
 
 

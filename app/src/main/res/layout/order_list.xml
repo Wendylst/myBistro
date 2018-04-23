@@ -10,206 +10,102 @@
     android:background="@color/colorPrimaryDark"
     android:orientation="vertical">
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/orderCView"
+    <android.support.v7.widget.CardView
+        android:id="@+id/orderCView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
+
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"
-                    android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="vertical">
 
 
 
-                                <TextView
-                                    android:id="@+id/textViewStart"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="TextView" />
+            <TextView
+                android:id="@+id/mushTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mushrooms" />
 
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
 
-                                <TextView
-                                    android:id="@+id/starterMush"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentStart="true"
-                                    android:layout_centerVertical="true"
-                                    android:text="TextView"
-                                    android:textColor="@android:color/white"
-                                    android:textStyle="bold" />
-                        </RelativeLayout>
+            <TextView
+                android:id="@+id/soupTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Soup" />
 
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/chickenWingsTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chicken Wings" />
 
-                                <TextView
-                                    android:id="@+id/textView5"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentStart="true"
+            <TextView
+                android:id="@+id/beefTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beef" />
 
-                                    android:text="TextView" />
+            <TextView
+                android:id="@+id/chickenTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chicken" />
 
-                                <TextView
-                                    android:id="@+id/textView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="TextView" />
+            <TextView
+                android:id="@+id/beefBurgerTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beef Burger" />
 
-                        </RelativeLayout>
+            <TextView
+                android:id="@+id/pizzaTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pizza" />
 
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/chickenSizzlerTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sizzler" />
 
-                                <TextView
-                                    android:id="@+id/textView2"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="TextView" />
+            <TextView
+                android:id="@+id/cakeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cake" />
 
-                                <TextView
-                                    android:id="@+id/textView3"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="TextView" />
+            <TextView
+                android:id="@+id/pieTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pie" />
 
-                        </RelativeLayout>
+            <TextView
+                android:id="@+id/pancakeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pancake" />
 
-                        <TextView
-                            android:id="@+id/textView6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
+            <TextView
+                android:id="@+id/cokeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Coke" />
 
-                        <TextView
-                            android:id="@+id/textView7"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
+            <TextView
+                android:id="@+id/waterTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Water" />
 
-                        <TextView
-                            android:id="@+id/textView8"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
 
-                        <TextView
-                            android:id="@+id/textView9"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
+        </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/textView26"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <TextView
-                            android:id="@+id/textView25"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <TextView
-                            android:id="@+id/textView17"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <TextView
-                            android:id="@+id/textView24"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <TextView
-                            android:id="@+id/textView23"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <TextView
-                            android:id="@+id/textView22"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <TextView
-                            android:id="@+id/textView21"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <TextView
-                            android:id="@+id/textView19"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <TextView
-                            android:id="@+id/textView20"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <TextView
-                            android:id="@+id/textView18"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <TextView
-                            android:id="@+id/textView16"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <TextView
-                            android:id="@+id/textView15"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <TextView
-                            android:id="@+id/textView10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <TextView
-                            android:id="@+id/textView11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <TextView
-                            android:id="@+id/textView12"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <TextView
-                            android:id="@+id/textView13"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <TextView
-                            android:id="@+id/textView14"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-                </LinearLayout>
-
-        </android.support.v7.widget.CardView>
+    </android.support.v7.widget.CardView>
 </LinearLayout>

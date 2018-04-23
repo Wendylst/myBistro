@@ -1,20 +1,14 @@
 package ie.app.bistro.mybistro;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.widget.Toast;
+import android.view.View;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-
-import java.util.List;
 
 import Adapters.OrdersViewHolder;
 import Models.NewOrderModel;
@@ -54,68 +48,49 @@ public class ViewOrders extends AppCompatActivity/*implements View.OnClickListen
         recView.setLayoutManager(layoutManager);
 
         database = FirebaseDatabase.getInstance();
-        orders = database.getReference("My Bistro");
-        orders = orders.child("Orders");
+//        orders = database.getReference("My Bistro");
+        DatabaseReference myRef = database.getReference();
+        orders = myRef.child("My Bistro").child("Orders");
 
-        Toast.makeText(this, ""  + orders.toString(), Toast.LENGTH_SHORT).show();
+//        orders = orders.child("Orders");
+
+//        Toast.makeText(this, ""  + orders.toString(), Toast.LENGTH_SHORT).show();
 
         loadOrders();
-
-       // database = FirebaseDatabase.getInstance();
-        //myRef = database.getReference().child("My Bistro").child("Orders");
-
-
-       // listItems = new ArrayList<>();
-        //NewOrderModel object = new NewOrderModel();
-        //NewOrderModel object1 = new NewOrderModel("View Orders");
-        //listItems.add(object);
-        //listItems.add(object1);
-        //onStart();
-
-
-
     }
 
-//   // @Override
-//    public void onStart() {
-//
-//        super.onStart();
-//        myDb.addValueEventListener(new ValueEventListener() {
-//
-//
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//
-//                    NewOrderModel snap = dataSnapshot.getValue(NewOrderModel.class);
-//
-//                //listItems.add(snap);
-//                //listItems.add(snap);
-//                Log.d(TAG, "Value is: " + snap);
-//
-//                //recView.
-//                adapter = new OrdersViewHolder(this, listItems);
-//                recView.setAdapter(adapter);
-//
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//                Log.w(TAG, "Failed to read value.", databaseError.toException());
-//            }
-//        });
-//
-//    }
-
     public void loadOrders(){
-
         adapter = new FirebaseRecyclerAdapter<NewOrderModel,
                 OrdersViewHolder>(NewOrderModel.class, R.layout.order_list, OrdersViewHolder.class,
                 orders) {
+
             @Override
             protected void populateViewHolder(OrdersViewHolder viewHolder, NewOrderModel model, int position) {
-
-                viewHolder.test.setText(model.getMushNP());
+                if (model.getBeefNP() == 0) {
+                    viewHolder.beefTV.setVisibility(View.GONE);
+                } else {
+                    viewHolder.beefTV.setText("Beef " + model.getBeefNP());
+                }
+                if (model.getChickenNP() == 0) {
+                    viewHolder.chickenTV.setVisibility(View.GONE);
+                } else {
+                    viewHolder.chickenTV.setText("Roast Chicken " + model.getChickenNP());
+                }
+                if (model.getSoupNP() == 0) {
+                    viewHolder.soupTV.setVisibility(View.GONE);
+                } else {
+                    viewHolder.soupTV.setText("Soup " + model.getSoupNP());
+                }
+                if (model.getBurgerNP() == 0) {
+                    viewHolder.beefBurgerTV.setVisibility(View.GONE);
+                } else {
+                    viewHolder.beefBurgerTV.setText("Beef Burger " + model.getBurgerNP());
+                }
+                if (model.getPizzaNP() == 0) {
+                    viewHolder.pizzaTV.setVisibility(View.GONE);
+                } else {
+                    viewHolder.pizzaTV.setText("Pizza " + model.getPizzaNP());
+                }
 
             }
         };
