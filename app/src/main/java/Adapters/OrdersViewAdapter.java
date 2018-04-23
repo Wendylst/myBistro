@@ -20,7 +20,7 @@ public class OrdersViewAdapter extends RecyclerView.Adapter<OrdersViewAdapter.Vi
     private List<NewOrderModel> orderItems;
     private Context context;
 
-    public OrdersViewAdapter(Context context, List orderItems) {
+    public OrdersViewAdapter(Context context, List<NewOrderModel> orderItems) {
         this.orderItems = orderItems;
         this.context = context;
     }

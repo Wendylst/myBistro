@@ -305,7 +305,7 @@ public class NewOrder extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 message = subEditText.getText().toString();
-                // myRefNew.getRef().child(message).setValue(dataToSave);
+                 myRefNew.getRef().child(message).setValue(dataToSave);
                 myRef = database.getReference().child("My Bistro").child("Orders");
                 dataToSave.put("Note", message);
                 myRefNew.getRef().child("Message").setValue(dataToSave);
@@ -421,7 +421,7 @@ public class NewOrder extends AppCompatActivity {
         final DatabaseReference myRefNew = myRef.push();
         //DatabaseReference myRef = database.getReference().child("Order").child("Type");
          ID =  this.orderID;
-
+        //openDialog();
 
         mushNP.setListener(new ScrollableNumberPickerListener() {
 
