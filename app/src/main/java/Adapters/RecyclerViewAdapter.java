@@ -43,6 +43,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         ListItemMain listItemMain = listItems.get(position);
 
         holder.textViewHead.setText(listItemMain.getHeading());
+
        // holder.textViewDescription.setText(listItemMain.getDescription());
     }
 
@@ -55,13 +56,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         public TextView textViewHead;
+        public TextView starterMush;
         //public TextView textViewDescription;
 
         public ViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
             textViewHead = (TextView) itemView.findViewById(R.id.textViewHead);
-            //textViewDescription = (TextView) itemView.findViewById(R.id.textViewDes);
+
         }
 
 

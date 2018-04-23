@@ -39,7 +39,7 @@ public class OrdersViewAdapter extends RecyclerView.Adapter<OrdersViewAdapter.Vi
         NewOrderModel listItemMain = orderItems.get(position);
 
         holder.textViewHead.setText(listItemMain.getHeading());
-        // holder.textViewDescription.setText(listItemMain.getDescription());
+        holder.starterMush.setText(listItemMain.getMushNP());
     }
 
     @Override
@@ -49,15 +49,17 @@ public class OrdersViewAdapter extends RecyclerView.Adapter<OrdersViewAdapter.Vi
 
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-
+        public TextView starterMush;
         public TextView textViewHead;
         //public TextView textViewDescription;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            itemView.setOnClickListener(this);
+
             textViewHead = (TextView) itemView.findViewById(R.id.textViewStart);
-            //textViewDescription = (TextView) itemView.findViewById(R.id.textViewDes);
+            starterMush = (TextView) itemView.findViewById(R.id.starterMush);
+
+            itemView.setOnClickListener(this);
         }
 
 
