@@ -21,6 +21,7 @@ public class OrdersViewHolder extends RecyclerView.ViewHolder {
     public TextView pancakeTV;
     public TextView cokeTV;
     public TextView waterTV;
+    public TextView messageTV;
 
 
     public OrdersViewHolder(View itemView) {
@@ -38,114 +39,11 @@ public class OrdersViewHolder extends RecyclerView.ViewHolder {
         pancakeTV = itemView.findViewById(R.id.pancakeTV);
         cokeTV = itemView.findViewById(R.id.cokeTV);
         waterTV = itemView.findViewById(R.id.waterTV);
-
+        messageTV = itemView.findViewById(R.id.messageTV);
 
 
 
 
     }
 
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//private List<NewOrderModel> orderItems;
-
-//public TextView test;
-// private Context context;
-
-// public OrdersViewHolder(ValueEventListener context, List<NewOrderModel> orderItems) {
-//     super();
-//    this.orderItems = orderItems;
-//     this.context = (Context) context;
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    @Override
-//    public OrdersViewHolder.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-//        View v = LayoutInflater.from(parent.getContext())
-//                .inflate(R.layout.order_list, parent, false);
-//        return new ViewHolder(v);
-//    }
-//
-//    @Override
-//    public void onBindViewHolder(OrdersViewHolder.ViewHolder holder, int position) {
-//        NewOrderModel listItemMain = orderItems.get(position);
-//
-//        holder.textViewHead.setText(listItemMain.getHeading());
-//        holder.starterMush.setText(listItemMain.getMushNP());
-//    }
-//
-//    @Override
-//    public int getItemCount() {
-//        return orderItems.size();
-//    }
-//
-//
-//    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-//        public TextView starterMush;
-//        public TextView textViewHead;
-//        //public TextView textViewDescription;
-//
-//        public ViewHolder(View itemView) {
-//            super(itemView);
-//
-//            textViewHead = (TextView) itemView.findViewById(R.id.textViewStart);
-//            starterMush = (TextView) itemView.findViewById(R.id.starterMush);
-//
-//            itemView.setOnClickListener(this);
-//        }
-//
-//
-//        @Override
-//        public void onClick(View v) {
-//
-//        }
-//    }
-//}

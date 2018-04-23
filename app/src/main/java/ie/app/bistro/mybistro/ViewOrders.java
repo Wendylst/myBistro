@@ -13,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import Adapters.OrdersViewHolder;
 import Models.NewOrderModel;
 
-public class ViewOrders extends AppCompatActivity/*implements View.OnClickListener*/ {
+public class ViewOrders extends AppCompatActivity{
 
     private static final String TAG = "View Orders Activity";
     private RecyclerView.LayoutManager layoutManager;
@@ -24,38 +24,20 @@ public class ViewOrders extends AppCompatActivity/*implements View.OnClickListen
 
     FirebaseRecyclerAdapter<NewOrderModel, OrdersViewHolder> adapter;
 
-    //private FirebaseDatabase database;
-    //private DatabaseReference myRef;
-
-    //private List<NewOrderModel> listItems;
-
-    //DatabaseReference myDb = FirebaseDatabase.getInstance().getReference();
-
-    //FirebaseRecyclerAdapter<NewOrderModel, OrdersViewAdapter> adapterSomething;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_orders);
-        //listItems = new ArrayList<>();
-
         recView = findViewById(R.id.ordersView);
         recView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recView.setLayoutManager(layoutManager);
 
         database = FirebaseDatabase.getInstance();
-//        orders = database.getReference("My Bistro");
         DatabaseReference myRef = database.getReference();
         orders = myRef.child("My Bistro").child("Orders");
-
-//        orders = orders.child("Orders");
-
-//        Toast.makeText(this, ""  + orders.toString(), Toast.LENGTH_SHORT).show();
-
         loadOrders();
     }
 

@@ -8,7 +8,6 @@ public class NewOrderModel {
     private String message;
 
     private String orderID;
-    //    String mushCB,soupCB,wingsCB,beefCB,chickenCB,burgerCB,pizzaCB,sizzlerCB,cakeCB,pieCB,pancakeCB,cokeCB,waterCB;
     private int mushNP,soupNP,wingsNP,beefNP,chickenNP,burgerNP,pizzaNP,sizzlerNP,cakeNP,pieNP,pancakeNP,cokeNP,waterNP;
 
     public NewOrderModel() {
@@ -18,19 +17,6 @@ public class NewOrderModel {
         this.heading = heading;
         this.message = message;
         this.orderID = orderID;
-//        this.mushCB = mushCB;
-//        this.soupCB = soupCB;
-//        this.wingsCB = wingsCB;
-//        this.beefCB = beefCB;
-//        this.chickenCB = chickenCB;
-//        this.burgerCB = burgerCB;
-//        this.pizzaCB = pizzaCB;
-//        this.sizzlerCB = sizzlerCB;
-//        this.cakeCB = cakeCB;
-//        this.pieCB = pieCB;
-//        this.pancakeCB = pancakeCB;
-//       this.cokeCB = cokeCB;
-//       this.waterCB = waterCB;
         this.mushNP = mushNP;
         this.soupNP = soupNP;
         this.wingsNP = wingsNP;
@@ -70,109 +56,6 @@ public class NewOrderModel {
         this.orderID = orderID;
     }
 
-//    public String getMushCB() {
-//        return mushCB;
-//    }
-//
-//    public void setMushCB(String mushCB) {
-//        this.mushCB = mushCB;
-//    }
-//
-//    public String getSoupCB() {
-//        return soupCB;
-//    }
-//
-//    public void setSoupCB(String soupCB) {
-//        this.soupCB = soupCB;
-//    }
-//
-//    public String getWingsCB() {
-//        return wingsCB;
-//    }
-//
-//    public void setWingsCB(String wingsCB) {
-//        this.wingsCB = wingsCB;
-//    }
-//
-//    public String getBeefCB() {
-//        return beefCB;
-//    }
-//
-//    public void setBeefCB(String beefCB) {
-//        this.beefCB = beefCB;
-//    }
-//
-//    public String getChickenCB() {
-//        return chickenCB;
-//    }
-//
-//    public void setChickenCB(String chickenCB) {
-//        this.chickenCB = chickenCB;
-//    }
-//
-//    public String getBurgerCB() {
-//        return burgerCB;
-//    }
-//
-//    public void setBurgerCB(String burgerCB) {
-//        this.burgerCB = burgerCB;
-//    }
-//
-//    public String getPizzaCB() {
-//        return pizzaCB;
-//    }
-//
-//    public void setPizzaCB(String pizzaCB) {
-//        this.pizzaCB = pizzaCB;
-//    }
-//
-//    public String getSizzlerCB() {
-//        return sizzlerCB;
-//    }
-//
-//    public void setSizzlerCB(String sizzlerCB) {
-//        this.sizzlerCB = sizzlerCB;
-//    }
-//
-//    public String getCakeCB() {
-//        return cakeCB;
-//    }
-//
-//    public void setCakeCB(String cakeCB) {
-//        this.cakeCB = cakeCB;
-//    }
-//
-//    public String getPieCB() {
-//        return pieCB;
-//    }
-//
-//    public void setPieCB(String pieCB) {
-//        this.pieCB = pieCB;
-//    }
-//
-//    public String getPancakeCB() {
-//        return pancakeCB;
-//    }
-//
-//    public void setPancakeCB(String pancakeCB) {
-//        this.pancakeCB = pancakeCB;
-//    }
-//
-//    public String getCokeCB() {
-//        return cokeCB;
-//    }
-//
-//    public void setCokeCB(String cokeCB) {
-//        this.cokeCB = cokeCB;
-//    }
-//
-//    public String getWaterCB() {
-//        return waterCB;
-//    }
-//
-//    public void setWaterCB(String waterCB) {
-//        this.waterCB = waterCB;
-//    }
 
     public int getMushNP() {
         return mushNP;
@@ -284,19 +167,6 @@ public class NewOrderModel {
                 "heading='" + heading + '\'' +
                 ", message='" + message + '\'' +
                 ", orderID='" + orderID + '\'' +
-//                ", mushCB='" + mushCB + '\'' +
-//                ", soupCB='" + soupCB + '\'' +
-//                ", wingsCB='" + wingsCB + '\'' +
-//                ", beefCB='" + beefCB + '\'' +
-//                ", chickenCB='" + chickenCB + '\'' +
-//                ", burgerCB='" + burgerCB + '\'' +
-//                ", pizzaCB='" + pizzaCB + '\'' +
-//                ", sizzlerCB='" + sizzlerCB + '\'' +
-//                ", cakeCB='" + cakeCB + '\'' +
-//                ", pieCB='" + pieCB + '\'' +
-//                ", pancakeCB='" + pancakeCB + '\'' +
-//                ", cokeCB='" + cokeCB + '\'' +
-//                ", waterCB='" + waterCB + '\'' +
                 ", mushNP=" + mushNP +
                 ", soupNP=" + soupNP +
                 ", wingsNP=" + wingsNP +

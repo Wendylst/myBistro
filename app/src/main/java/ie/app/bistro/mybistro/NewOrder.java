@@ -39,7 +39,6 @@ public class NewOrder extends AppCompatActivity {
     DatabaseReference myRef;
     String ID;
     String orderID = UUID.randomUUID().toString();
-    //    Map<String, String> dataToSave = new HashMap<>();
     NewOrderModel dataToSave = new NewOrderModel();
     DatabaseReference myRefNew;
 
@@ -277,11 +276,6 @@ public class NewOrder extends AppCompatActivity {
         LayoutInflater inflater = LayoutInflater.from(NewOrder.this);
         View subView = inflater.inflate(R.layout.dialog_box, null);
         final EditText subEditText = (EditText)subView.findViewById(R.id.dialogEditText);
-        //final DatabaseReference myRefNew = myRef.push();
-        //FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        final DatabaseReference myRefNew = myRef.push();
-        //final DatabaseReference myRefNew = myRef.push();
-
         AlertDialog.Builder builder;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             builder = new AlertDialog.Builder(NewOrder.this, android.R.style.Theme_Material_Dialog_Alert);
@@ -293,7 +287,6 @@ public class NewOrder extends AppCompatActivity {
         }
 
         builder.setTitle("Message:");
-        // builder.setMessage("AlertDialog Message");
         builder.setView(subView);
 
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -392,27 +385,16 @@ public class NewOrder extends AppCompatActivity {
 
     public void addOrder(View view)
     {
-        //DatabaseReference myRefNew = myRef.push();
-        //doTheFireBaseThing();
-        //clearEverything();
 
-        //myRefNew.getRef().child(message).setValue(dataToSave);
-        //dataToSave.put("Note", message);
         Toast.makeText(getApplicationContext(),"Order Created.", Toast.LENGTH_SHORT).show();
         finish();
-        /*Intent orders = new Intent(this, NewOrder.class);
-        startActivity(orders);
-        finish();*/
+
     }
 
 
     //NUMBER PICKERS
     public void callAllNumberPickers(){
         Log.i("numberpicker","number pick2");
-        //FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //final Map<String, String> dataToSave = new HashMap<>();
-//        final DatabaseReference myRefNew = myRef.push();
-        //DatabaseReference myRef = database.getReference().child("Order").child("Type");
         ID =  this.orderID;
         //openDialog();
 
@@ -425,18 +407,14 @@ public class NewOrder extends AppCompatActivity {
 
                 Log.i("numberpicker", String.valueOf(mushNPInt));
                 String mushNPO = String.valueOf(mushNPInt);
-//                    dataToSave.put("id", ID);
                 if(mushNPO.equalsIgnoreCase("0")){
                     mushCB.setChecked(false);
                 }else{
                     mushCB.setChecked(true);
                 }
-//                    dataToSave.put("quantity", mushNPO);
-//                    dataToSave.put("name", "Garlic Muchrooms");
-//                dataToSave.put("Garlic Mushrooms", mushNPO);
+
                 dataToSave.setMushNP(mushNPInt);
                 myRefNew.getRef().setValue(dataToSave);
-//                    myRefNew.getRef().child("1").setValue(dataToSave);
             }
         });
         soupNP.setListener(new ScrollableNumberPickerListener() {
@@ -451,13 +429,9 @@ public class NewOrder extends AppCompatActivity {
                 }else{
                     soupCB.setChecked(true);
                 }
-//                dataToSave.put("id", ID);
-//                dataToSave.put("quantity", soupNPO);
-//                dataToSave.put("name", "Soup of the Day");
-//                dataToSave.put("Soup of the Day", soupNPO);
                 dataToSave.setSoupNP(soupNPInt);
                 myRefNew.getRef().setValue(dataToSave);
-//                myRefNew.getRef().child("2").setValue(dataToSave);
+
             }
         });
         wingsNP.setListener(new ScrollableNumberPickerListener() {
@@ -472,12 +446,10 @@ public class NewOrder extends AppCompatActivity {
                 }else{
                     wingsCB.setChecked(true);
                 }
-//                dataToSave.put("quantity", wingsNPO);
-//                dataToSave.put("name", "BBQ Wings");
-//                dataToSave.put("BBQ Wings", wingsNPO);
+
                 dataToSave.setWingsNP(wingsNPInt);
                 myRefNew.getRef().setValue(dataToSave);
-//                myRefNew.getRef().child("3").setValue(dataToSave);
+
             }
         });
         beefNP.setListener(new ScrollableNumberPickerListener() {
@@ -492,12 +464,10 @@ public class NewOrder extends AppCompatActivity {
                 }else{
                     beefCB.setChecked(true);
                 }
-//                dataToSave.put("quantity", beefNPO);
-//                dataToSave.put("name", "Roast Beef");
                 dataToSave.setBeefNP(beefNPInt);
-//                dataToSave.put("Roast Beef", beefNPO);
+
                 myRefNew.getRef().setValue(dataToSave);
-//                myRefNew.getRef().child("4").setValue(dataToSave);
+
             }
         });
         chickenNP.setListener(new ScrollableNumberPickerListener() {
@@ -512,12 +482,8 @@ public class NewOrder extends AppCompatActivity {
                 }else{
                     chickenCB.setChecked(true);
                 }
-//                dataToSave.put("quantity", chickenNPO);
-//                dataToSave.put("name", "Roast Chicken");
                 dataToSave.setChickenNP(chickenNPInt);
-//                dataToSave.put("Roast Chicken", chickenNPO);
                 myRefNew.getRef().setValue(dataToSave);
-//                myRefNew.getRef().child("5").setValue(dataToSave);
             }
         });
         burgerNP.setListener(new ScrollableNumberPickerListener() {
@@ -532,12 +498,11 @@ public class NewOrder extends AppCompatActivity {
                 }else{
                     burgerCB.setChecked(true);
                 }
-//                dataToSave.put("quantity", burgerNPO);
-//                dataToSave.put("name", "8oz Beef Burger");
+
                 dataToSave.setBurgerNP(burgerNPInt);
-//                dataToSave.put("8oz Beef Burger", burgerNPO);
+
                 myRefNew.getRef().setValue(dataToSave);
-//                myRefNew.getRef().child("6").setValue(dataToSave);
+
             }
         });
         pizzaNP.setListener(new ScrollableNumberPickerListener() {
@@ -552,12 +517,11 @@ public class NewOrder extends AppCompatActivity {
                 }else{
                     pizzaCB.setChecked(true);
                 }
-//                dataToSave.put("quantity", pizzaNPO);
-//                dataToSave.put("name", "Meat Feast Pizza");
+
                 dataToSave.setPizzaNP(pizzaNPInt);
-//                dataToSave.put("Meat Feast Pizza", pizzaNPO);
+
                 myRefNew.getRef().setValue(dataToSave);
-//                myRefNew.getRef().child("7").setValue(dataToSave);
+
             }
         });
         sizzlerNP.setListener(new ScrollableNumberPickerListener() {
@@ -572,12 +536,11 @@ public class NewOrder extends AppCompatActivity {
                 }else{
                     sizzlerCB.setChecked(true);
                 }
-//                dataToSave.put("quantity", sizzlerNPO);
-//                dataToSave.put("name", "Chicken Sizzler");
+
                 dataToSave.setSizzlerNP(sizzlerNPInt);
-//                dataToSave.put("Chicken Sizzler", sizzlerNPO);
+
                 myRefNew.getRef().setValue(dataToSave);
-//                myRefNew.getRef().child("8").setValue(dataToSave);
+
             }
         });
         cakeNP.setListener(new ScrollableNumberPickerListener() {
@@ -592,12 +555,11 @@ public class NewOrder extends AppCompatActivity {
                 }else{
                     cakeCB.setChecked(true);
                 }
-//                dataToSave.put("quantity", cakeNPO);
-//                dataToSave.put("name", "Chocolate Cake");
+
                 dataToSave.setCakeNP(cakeNPInt);
-//                dataToSave.put("Chocolate Cake", cakeNPO);
+
                 myRefNew.getRef().setValue(dataToSave);
-//                myRefNew.getRef().child("9").setValue(dataToSave);
+
             }
         });
         pieNP.setListener(new ScrollableNumberPickerListener() {
@@ -612,12 +574,11 @@ public class NewOrder extends AppCompatActivity {
                 }else{
                     pieCB.setChecked(true);
                 }
-//                dataToSave.put("quantity", pieNPO);
-//                dataToSave.put("name", "Apple Pie")
+
                 dataToSave.setPieNP(pieNPInt);
-//                dataToSave.put("Apple Pie", pieNPO);
+
                 myRefNew.getRef().setValue(dataToSave);
-//                myRefNew.getRef().child("10").setValue(dataToSave);
+
             }
         });
         pancakeNP.setListener(new ScrollableNumberPickerListener() {
@@ -632,12 +593,11 @@ public class NewOrder extends AppCompatActivity {
                 }else{
                     pancakeCB.setChecked(true);
                 }
-//                dataToSave.put("quantity", pancakeNPO);
-//                dataToSave.put("name", "Pancake Pleasure");
+
                 dataToSave.setPancakeNP(pancakeNPInt);
-//                dataToSave.put("Pancake Pleasure", pancakeNPO);
+
                 myRefNew.getRef().setValue(dataToSave);
-//                myRefNew.getRef().child("11").setValue(dataToSave);
+
             }
         });
         cokeNP.setListener(new ScrollableNumberPickerListener() {
@@ -652,12 +612,11 @@ public class NewOrder extends AppCompatActivity {
                 }else{
                     cokeCB.setChecked(true);
                 }
-//                dataToSave.put("quantity", cokeNPO);
-//                dataToSave.put("name", "Coke");
+
                 dataToSave.setCokeNP(cokeNPInt);
-//                dataToSave.put("Coke", cokeNPO);
+
                 myRefNew.getRef().setValue(dataToSave);
-//                myRefNew.getRef().child("12").setValue(dataToSave);
+
             }
         });
         waterNP.setListener(new ScrollableNumberPickerListener() {
@@ -672,50 +631,17 @@ public class NewOrder extends AppCompatActivity {
                 }else{
                     waterCB.setChecked(true);
                 }
-//                dataToSave.put("quantity", waterNPO);
-//                dataToSave.put("name", "Water");
+
                 dataToSave.setWaterNP(waterNPInt);
-//                dataToSave.put("Water", waterNPO);
+
                 myRefNew.getRef().setValue(dataToSave);
-//                myRefNew.getRef().child("13").setValue(dataToSave);
+
             }
         });
 
 
     }
 
-    public void doTheFireBaseThing() {
-
-        //FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //DatabaseReference myRefNew = myRef.push();
-        //myRef.getRef().child("").setValue(mushNPInt);
-        //myRef.getRef().child("").setValue(soupNPInt);
-
-        //DatabaseReference myRef = database.getReference().child("Order").child("Type");
-
-        // myRef.getRef().child("").setValue(mushNP);
-        //myRef.getRef().child("").setValue(chickenNP);
-
-        //myRef.setValue(mushNP);
-        //myRef.setValue(chickenNP);
-        //String mushString = "Garlic Mushrooms";
-        //DatabaseReference myRefNew = myRef.push();
-        // Map<String, String> dataToSave = new HashMap<>();
-        //dataToSave.put("course", cardName);
-        //dataToSave.put("type", mushCB);
-        //String mushString = Integer.toString(mushNPInt);
-        //String hundred = String.valueOf(mushNPInt);
-        //String tmpStr10 = String.valueOf(mushNPInt);
-        //dataToSave.put("type", mushCB);
-
-    /*if(strI.isEmpty()) {
-
-    }else{dataToSave.put("type", mushString);
-        dataToSave.put("quantity", strI);
-        dataToSave.put("order ID", orderID);
-        myRefNew.getRef().child("").setValue(dataToSave);}
-}*/
-    }
 
     public void clearEverything(){
         waterNP.setValue(0);

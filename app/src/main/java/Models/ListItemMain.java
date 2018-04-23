@@ -9,7 +9,6 @@ public class ListItemMain {
 
     public ListItemMain(String heading) {
         this.heading = heading;
-        //this.description = description;
     }
 
     public String getHeading() {
