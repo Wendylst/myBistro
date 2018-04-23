@@ -46,10 +46,13 @@
                     android:background="@color/colorPrimaryDark"
                     android:paddingLeft="5dp"
                     android:text="Starters:"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
 
                 <RelativeLayout
                     android:id="@+id/why"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -59,17 +62,25 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
+                        android:layout_marginStart="26dp"
+                        android:scaleX="1.40"
+                        android:scaleY="1.40"
                         android:text="Garlic Mushrooms" />
 
                     <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
                         android:id="@+id/mushNP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="260dp" />
+                        android:layout_marginLeft="250dp"
+                        android:paddingTop="2dp"
+                        android:scaleX="1.80"
+                        android:scaleY="1.80"/>
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/why2"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -79,17 +90,24 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
+                        android:layout_marginStart="23dp"
+                        android:scaleX="1.40"
+                        android:scaleY="1.40"
                         android:text="Soup of the day" />
 
                     <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
                         android:id="@+id/soupNP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="260dp" />
+                        android:layout_marginLeft="250dp"
+                        android:scaleX="1.80"
+                        android:scaleY="1.80"/>
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/why3"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -99,13 +117,18 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
+                        android:layout_marginStart="28dp"
+                        android:scaleX="1.40"
+                        android:scaleY="1.40"
                         android:text="BBQ Chicken Wings" />
 
                     <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
                         android:id="@+id/wingsNP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="260dp">
+                        android:layout_marginLeft="250dp"
+                        android:scaleX="1.80"
+                        android:scaleY="1.80">
 
                     </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
                 </RelativeLayout>
@@ -114,16 +137,19 @@
                     android:id="@+id/mainsText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-
-                    android:text="Mains:"
-                    android:paddingLeft="5dp"
                     android:layout_marginRight="10dp"
+
+                    android:layout_weight="1"
                     android:background="@color/colorPrimaryDark"
-                    android:textColor="@android:color/white" />
+                    android:paddingLeft="5dp"
+                    android:text="Mains:"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
 
                 <RelativeLayout
                     android:id="@+id/why4"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -133,13 +159,18 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
+                        android:layout_marginStart="17dp"
+                        android:scaleX="1.40"
+                        android:scaleY="1.40"
                         android:text="Roast Beef" />
 
                     <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
                         android:id="@+id/beefNP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="260dp">
+                        android:layout_marginLeft="250dp"
+                        android:scaleX="1.80"
+                        android:scaleY="1.80">
 
                     </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
                 </RelativeLayout>
@@ -147,6 +178,8 @@
                 <RelativeLayout
                     android:id="@+id/why5"
                     android:layout_width="match_parent"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:layout_height="match_parent">
 
                     <CheckBox
@@ -155,19 +188,26 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
+                        android:layout_marginStart="21dp"
+                        android:scaleX="1.40"
+                        android:scaleY="1.40"
                         android:text="Roast Chicken" />
 
                     <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
                         android:id="@+id/chickenNP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="260dp">
+                        android:layout_marginLeft="250dp"
+                        android:scaleX="1.80"
+                        android:scaleY="1.80">
 
                     </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/why6"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -177,19 +217,26 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
+                        android:layout_marginStart="23dp"
+                        android:scaleX="1.40"
+                        android:scaleY="1.40"
                         android:text="8oz Beef Burger" />
 
                     <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
                         android:id="@+id/burgerNP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="260dp">
+                        android:layout_marginLeft="250dp"
+                        android:scaleX="1.80"
+                        android:scaleY="1.80">
 
                     </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/why7"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -199,19 +246,26 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
+                        android:layout_marginStart="24dp"
+                        android:scaleX="1.40"
+                        android:scaleY="1.40"
                         android:text="Meat Feast Pizza" />
 
                     <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
                         android:id="@+id/pizzaNP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="260dp">
+                        android:layout_marginLeft="250dp"
+                        android:scaleX="1.80"
+                        android:scaleY="1.80">
 
                     </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/why8"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -221,13 +275,18 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
-                        android:text="Chicken Sizzler" />
+                        android:text="Chicken Sizzler"
+                        android:layout_marginStart="22dp"
+                        android:scaleX="1.40"
+                        android:scaleY="1.40"/>
 
                     <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
                         android:id="@+id/sizzlerNP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="260dp">
+                        android:layout_marginLeft="250dp"
+                        android:scaleX="1.80"
+                        android:scaleY="1.80">
 
                     </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
                 </RelativeLayout>
@@ -236,14 +295,17 @@
                     android:id="@+id/dessertsText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Desserts:"
-                    android:paddingLeft="5dp"
                     android:layout_marginRight="10dp"
                     android:background="@color/colorPrimaryDark"
-                    android:textColor="@android:color/white"/>
+                    android:paddingLeft="5dp"
+                    android:text="Desserts:"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
 
                 <RelativeLayout
                     android:id="@+id/why9"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -253,19 +315,26 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
-                        android:text="Choclate Cake" />
+                        android:text="Choclate Cake"
+                        android:layout_marginStart="21dp"
+                        android:scaleX="1.40"
+                        android:scaleY="1.40"/>
 
                     <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
                         android:id="@+id/cakeNP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="260dp">
+                        android:layout_marginLeft="250dp"
+                        android:scaleX="1.80"
+                        android:scaleY="1.80">
 
                     </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/why10"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -275,19 +344,26 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
-                        android:text="Apple Pie" />
+                        android:text="Apple Pie"
+                        android:layout_marginStart="15dp"
+                        android:scaleX="1.40"
+                        android:scaleY="1.40"/>
 
                     <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
                         android:id="@+id/pieNP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="260dp">
+                        android:layout_marginLeft="250dp"
+                        android:scaleX="1.80"
+                        android:scaleY="1.80">
 
                     </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/why11"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -297,13 +373,18 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
-                        android:text="Pancake Pleasure" />
+                        android:text="Pancake Pleasure"
+                        android:layout_marginStart="25dp"
+                        android:scaleX="1.40"
+                        android:scaleY="1.40"/>
 
                     <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
                         android:id="@+id/pancakeNP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="260dp">
+                        android:layout_marginLeft="250dp"
+                        android:scaleX="1.80"
+                        android:scaleY="1.80">
 
                     </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
 
@@ -313,14 +394,17 @@
                     android:id="@+id/drinksText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Drinks:"
-                    android:paddingLeft="5dp"
                     android:layout_marginRight="10dp"
                     android:background="@color/colorPrimaryDark"
-                    android:textColor="@android:color/white"/>
+                    android:paddingLeft="5dp"
+                    android:text="Drinks:"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
 
                 <RelativeLayout
                     android:id="@+id/why12"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -330,13 +414,18 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
-                        android:text="Coke" />
+                        android:text="Coke"
+                        android:layout_marginStart="10dp"
+                        android:scaleX="1.40"
+                        android:scaleY="1.40"/>
 
                     <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
                         android:id="@+id/cokeNP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="260dp">
+                        android:layout_marginLeft="250dp"
+                        android:scaleX="1.80"
+                        android:scaleY="1.80">
 
                     </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
 
@@ -344,6 +433,8 @@
 
                 <RelativeLayout
                     android:id="@+id/why13"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -353,14 +444,18 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
-                        android:text="Water" />
+                        android:text="Water"
+                        android:layout_marginStart="11dp"
+                        android:scaleX="1.40"
+                        android:scaleY="1.40"/>
 
                     <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
                         android:id="@+id/waterNP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="260dp"
-
+                        android:layout_marginLeft="250dp"
+                        android:scaleX="1.80"
+                        android:scaleY="1.80"
                         >
 
                     </com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker>
@@ -368,6 +463,8 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -383,8 +480,7 @@
                         android:text="Add Message"
                         android:textAppearance="@style/TextAppearance.AppCompat"
                         android:textColor="@android:color/white"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textSize="24sp" />
 
                 </RelativeLayout>
 
@@ -392,16 +488,17 @@
                     android:id="@+id/addOrder"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="20dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
                     android:background="@color/colorPrimaryDark"
                     android:onClick="addOrder"
                     android:text="Create Order"
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     android:textColor="@android:color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
+                    android:textSize="24sp"
                     android:visibility="visible" />
 
             </LinearLayout>

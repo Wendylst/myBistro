@@ -46,6 +46,7 @@ public class NewOrder extends AppCompatActivity {
     DatabaseReference myRef;
     String ID;
     String orderID = UUID.randomUUID().toString();
+    Map<String, String> dataToSave = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,8 @@ public class NewOrder extends AppCompatActivity {
         setContentView(R.layout.activity_new_order);
 
         database = FirebaseDatabase.getInstance();
-        myRef = database.getReference().child("menu").child("order");
+        myRef = database.getReference().child("My Bistro").child("Orders");
+        DatabaseReference myRefNew = myRef.push();
         mushNP = findViewById(R.id.mushNP);
         soupNP = findViewById(R.id.soupNP);
         wingsNP = findViewById(R.id.wingsNP);
@@ -276,20 +278,25 @@ public class NewOrder extends AppCompatActivity {
     }
 
     private void openDialog(){
+
         LayoutInflater inflater = LayoutInflater.from(NewOrder.this);
         View subView = inflater.inflate(R.layout.dialog_box, null);
         final EditText subEditText = (EditText)subView.findViewById(R.id.dialogEditText);
-        final Map<String, String> dataToSave = new HashMap<>();
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-
+        //final DatabaseReference myRefNew = myRef.push();
+        //FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference myRefNew = myRef.push();
+        //final DatabaseReference myRefNew = myRef.push();
 
         AlertDialog.Builder builder;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             builder = new AlertDialog.Builder(NewOrder.this, android.R.style.Theme_Material_Dialog_Alert);
+            getWindow().setSoftInputMode(
+                    WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE
+            );
         } else {
             builder = new AlertDialog.Builder(NewOrder.this);
         }
+
         builder.setTitle("Message:");
        // builder.setMessage("AlertDialog Message");
         builder.setView(subView);
@@ -297,13 +304,16 @@ public class NewOrder extends AppCompatActivity {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                message = subEditText.getText().toString();
+                // myRefNew.getRef().child(message).setValue(dataToSave);
+                myRef = database.getReference().child("My Bistro").child("Orders");
+                dataToSave.put("Note", message);
+                myRefNew.getRef().child("Message").setValue(dataToSave);
                 getWindow().setSoftInputMode(
                         WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
                 );
 
-                  message = subEditText.getText().toString();
-                dataToSave.put("Message",message);
-                myRefNew.getRef().child("Message").setValue(dataToSave);
+
             }
         });
 
@@ -389,13 +399,14 @@ public class NewOrder extends AppCompatActivity {
 
     public void addOrder(View view)
     {
-
-        doTheFireBaseThing();
+        //DatabaseReference myRefNew = myRef.push();
+        //doTheFireBaseThing();
         //clearEverything();
-        finish();
 
+        //myRefNew.getRef().child(message).setValue(dataToSave);
+        //dataToSave.put("Note", message);
         Toast.makeText(getApplicationContext(),"Order Created.", Toast.LENGTH_SHORT).show();
-
+        finish();
         /*Intent orders = new Intent(this, NewOrder.class);
         startActivity(orders);
         finish();*/
@@ -406,7 +417,7 @@ public class NewOrder extends AppCompatActivity {
     public void callAllNumberPickers(){
         Log.i("numberpicker","number pick2");
         //FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final Map<String, String> dataToSave = new HashMap<>();
+        //final Map<String, String> dataToSave = new HashMap<>();
         final DatabaseReference myRefNew = myRef.push();
         //DatabaseReference myRef = database.getReference().child("Order").child("Type");
          ID =  this.orderID;

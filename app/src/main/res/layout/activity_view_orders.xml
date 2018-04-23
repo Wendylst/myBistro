@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".ViewOrders">
+    tools:context=".ViewOrders"
+    tools:layout_editor_absoluteY="81dp">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/ordersView"
-        android:layout_width="395dp"
-        android:layout_height="587dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="8dp" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteY="16dp" />
 </android.support.constraint.ConstraintLayout>
