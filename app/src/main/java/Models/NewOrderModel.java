@@ -276,4 +276,39 @@ public class NewOrderModel {
     public void setWaterNP(int waterNP) {
         this.waterNP = waterNP;
     }
+
+    @Override
+    public String toString() {
+        return "NewOrderModel{" +
+                "heading='" + heading + '\'' +
+                ", description='" + description + '\'' +
+                ", orderID='" + orderID + '\'' +
+                ", mushCB='" + mushCB + '\'' +
+                ", soupCB='" + soupCB + '\'' +
+                ", wingsCB='" + wingsCB + '\'' +
+                ", beefCB='" + beefCB + '\'' +
+                ", chickenCB='" + chickenCB + '\'' +
+                ", burgerCB='" + burgerCB + '\'' +
+                ", pizzaCB='" + pizzaCB + '\'' +
+                ", sizzlerCB='" + sizzlerCB + '\'' +
+                ", cakeCB='" + cakeCB + '\'' +
+                ", pieCB='" + pieCB + '\'' +
+                ", pancakeCB='" + pancakeCB + '\'' +
+                ", cokeCB='" + cokeCB + '\'' +
+                ", waterCB='" + waterCB + '\'' +
+                ", mushNP=" + mushNP +
+                ", soupNP=" + soupNP +
+                ", wingsNP=" + wingsNP +
+                ", beefNP=" + beefNP +
+                ", chickenNP=" + chickenNP +
+                ", burgerNP=" + burgerNP +
+                ", pizzaNP=" + pizzaNP +
+                ", sizzlerNP=" + sizzlerNP +
+                ", cakeNP=" + cakeNP +
+                ", pieNP=" + pieNP +
+                ", pancakeNP=" + pancakeNP +
+                ", cokeNP=" + cokeNP +
+                ", waterNP=" + waterNP +
+                '}';
+    }
 }

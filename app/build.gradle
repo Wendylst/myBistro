@@ -31,6 +31,8 @@ dependencies {
     implementation 'com.android.support:cardview-v7:27.1.1'
     implementation 'com.michaelmuenzer.android:ScrollableNumberPicker:0.2.2'
 
-}
 
-apply plugin: 'com.google.gms.google-services'
+    compile 'com.firebaseui:firebase-ui-database:1.2.0'
+
+    apply plugin: 'com.google.gms.google-services'
+}
