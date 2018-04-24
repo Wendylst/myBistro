@@ -36,6 +36,8 @@
                 android:id="@+id/textViewHead"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="40dp"
                 android:fontFamily="serif"
                 android:gravity="center"
                 android:lineSpacingExtra="24sp"
@@ -45,10 +47,7 @@
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                android:typeface="serif"
-                android:layout_marginTop="40dp"
-                android:layout_marginBottom="40dp"
-                />
+                android:typeface="serif" />
 
 
         </LinearLayout>

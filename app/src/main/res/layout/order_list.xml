@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:layout_marginTop="10dp"
+    android:layout_margin="10dp"
     android:background="@color/colorPrimaryDark"
     android:orientation="vertical">
 
@@ -14,102 +12,179 @@
         android:id="@+id/orderCView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark">
+        android:background="@color/colorPrimaryDark"
+
+        >
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorPrimaryDark"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:padding="10dp"
+            >
 
-
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="10dp">
             <TextView
                 android:id="@+id/mushTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mushrooms" />
+                android:text="Mushrooms"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
 
             <TextView
                 android:id="@+id/soupTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Soup" />
+                android:text="Soup"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/chickenWingsTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Chicken Wings" />
+                android:textSize="18sp"
+                android:text="Chicken Wings"
 
+                android:textColor="@android:color/white"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                android:paddingBottom="10dp">
             <TextView
                 android:id="@+id/beefTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Beef" />
+                android:text="Beef"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/chickenTV"
+                android:textSize="18sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Chicken" />
+                android:text="Chicken"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/beefBurgerTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Beef Burger" />
+                android:text="Beef Burger"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/pizzaTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pizza" />
+                android:text="Pizza"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/chickenSizzlerTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sizzler" />
+                android:text="Sizzler"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="10dp">
 
             <TextView
                 android:id="@+id/cakeTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cake" />
+                android:text="Cake"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/pieTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pie" />
+                android:text="Pie"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/pancakeTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pancake" />
-
+                android:text="Pancake"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="10dp">
             <TextView
                 android:id="@+id/cokeTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Coke" />
+                android:text="Coke"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/waterTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Water" />
-
+                android:text="Water"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="10dp">
             <TextView
                 android:id="@+id/messageTV"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
-
+                android:text="Message"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"/>
+            </LinearLayout>
 
         </LinearLayout>
 
