@@ -5,10 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import Adapters.OrdersViewHolder;
 import Models.NewOrderModel;
@@ -39,7 +43,10 @@ public class ViewOrders extends AppCompatActivity{
         DatabaseReference myRef = database.getReference();
         orders = myRef.child("My Bistro").child("Orders");
         loadOrders();
+
     }
+
+
 
 
 
@@ -53,6 +60,33 @@ public class ViewOrders extends AppCompatActivity{
             @Override
             protected void populateViewHolder(OrdersViewHolder viewHolder, NewOrderModel model, int position) {
 
+                   /* Button button = (Button) findViewById(R.id.deleteAll);
+                    button.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+                            //orders.child(childKey).removeValue();
+                        }
+                    });
+
+                    new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            for (DataSnapshot child : dataSnapshot.getChildren()) {
+                                String childKey = child.getKey();
+                                orders.child(childKey).removeValue();
+                                //child.getKey();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                            System.out.println("The read failed: " + databaseError.getCode());
+                        }
+                    };
+
+                /*for( DataSnapshot child : orders.getChildren() ) {
+                    String childKey = child.getKey();
+
+                }*/
 
                 if(model.getSoupNP()==0 && model.getWingsNP() == 0 && model.getMushNP() == 0){
                     viewHolder.starterTV.setVisibility(View.GONE);
@@ -154,9 +188,13 @@ public class ViewOrders extends AppCompatActivity{
 
                 }
 
-
         };
 
+
         recView.setAdapter(adapter);
+
+
     }
+
+
 }

@@ -56,7 +56,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         public TextView textViewHead;
-        public TextView starterMush;
+        //public TextView starterMush;
         //public TextView textViewDescription;
 
         public ViewHolder(View itemView) {
@@ -76,13 +76,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             case 0:
                 Intent intent = new Intent(context, NewOrder.class);
-                //Toast.makeText(context, "Create Order", Toast.LENGTH_SHORT).show();
                 context.startActivity(intent);
                 break;
 
             case 1:
                 Intent intent2 = new Intent(context, ViewOrders.class);
-                //Toast.makeText(context, "Tables", Toast.LENGTH_SHORT).show();
                 context.startActivity(intent2);
                 break;
 

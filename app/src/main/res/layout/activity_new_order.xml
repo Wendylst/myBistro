@@ -44,6 +44,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
                     android:background="@color/colorPrimaryDark"
+                    android:fontFamily="@font/roboto"
                     android:paddingLeft="5dp"
                     android:text="Starters:"
                     android:textColor="@android:color/white"
@@ -63,6 +64,7 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginStart="26dp"
+                        android:fontFamily="@font/roboto"
                         android:scaleX="1.40"
                         android:scaleY="1.40"
                         android:text="Garlic Mushrooms" />
@@ -91,6 +93,7 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginStart="23dp"
+                        android:fontFamily="@font/roboto"
                         android:scaleX="1.40"
                         android:scaleY="1.40"
                         android:text="Soup of the day" />
@@ -118,6 +121,7 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginStart="28dp"
+                        android:fontFamily="@font/roboto"
                         android:scaleX="1.40"
                         android:scaleY="1.40"
                         android:text="BBQ Chicken Wings" />
@@ -141,6 +145,7 @@
 
                     android:layout_weight="1"
                     android:background="@color/colorPrimaryDark"
+                    android:fontFamily="@font/roboto"
                     android:paddingLeft="5dp"
                     android:text="Mains:"
                     android:textColor="@android:color/white"
@@ -160,6 +165,7 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginStart="17dp"
+                        android:fontFamily="@font/roboto"
                         android:scaleX="1.40"
                         android:scaleY="1.40"
                         android:text="Roast Beef" />
@@ -189,6 +195,7 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginStart="21dp"
+                        android:fontFamily="@font/roboto"
                         android:scaleX="1.40"
                         android:scaleY="1.40"
                         android:text="Roast Chicken" />
@@ -218,6 +225,7 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginStart="23dp"
+                        android:fontFamily="@font/roboto"
                         android:scaleX="1.40"
                         android:scaleY="1.40"
                         android:text="8oz Beef Burger" />
@@ -247,6 +255,7 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginStart="24dp"
+                        android:fontFamily="@font/roboto"
                         android:scaleX="1.40"
                         android:scaleY="1.40"
                         android:text="Meat Feast Pizza" />
@@ -275,10 +284,11 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
-                        android:text="Chicken Sizzler"
                         android:layout_marginStart="22dp"
+                        android:fontFamily="@font/roboto"
                         android:scaleX="1.40"
-                        android:scaleY="1.40"/>
+                        android:scaleY="1.40"
+                        android:text="Chicken Sizzler" />
 
                     <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
                         android:id="@+id/sizzlerNP"
@@ -297,6 +307,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
                     android:background="@color/colorPrimaryDark"
+                    android:fontFamily="@font/roboto"
                     android:paddingLeft="5dp"
                     android:text="Desserts:"
                     android:textColor="@android:color/white"
@@ -315,10 +326,11 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
-                        android:text="Choclate Cake"
                         android:layout_marginStart="21dp"
+                        android:fontFamily="@font/roboto"
                         android:scaleX="1.40"
-                        android:scaleY="1.40"/>
+                        android:scaleY="1.40"
+                        android:text="Choclate Cake" />
 
                     <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
                         android:id="@+id/cakeNP"
@@ -344,10 +356,11 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
-                        android:text="Apple Pie"
                         android:layout_marginStart="15dp"
+                        android:fontFamily="@font/roboto"
                         android:scaleX="1.40"
-                        android:scaleY="1.40"/>
+                        android:scaleY="1.40"
+                        android:text="Apple Pie" />
 
                     <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
                         android:id="@+id/pieNP"
@@ -475,6 +488,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_weight="1"
                         android:background="@color/colorPrimaryDark"
+                        android:fontFamily="@font/roboto"
                         android:paddingLeft="20dp"
                         android:paddingRight="20dp"
                         android:text="Add Message"
@@ -491,10 +505,11 @@
                     android:layout_marginBottom="20dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp"
                     android:background="@color/colorPrimaryDark"
+                    android:fontFamily="@font/roboto"
                     android:onClick="addOrder"
+                    android:paddingBottom="20dp"
+                    android:paddingTop="20dp"
                     android:text="Create Order"
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     android:textColor="@android:color/white"
