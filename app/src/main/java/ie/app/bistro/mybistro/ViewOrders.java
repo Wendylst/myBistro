@@ -41,51 +41,76 @@ public class ViewOrders extends AppCompatActivity{
         loadOrders();
     }
 
+
+
     public void loadOrders(){
         adapter = new FirebaseRecyclerAdapter<NewOrderModel,
                 OrdersViewHolder>(NewOrderModel.class, R.layout.order_list, OrdersViewHolder.class,
                 orders) {
 
+
+
             @Override
             protected void populateViewHolder(OrdersViewHolder viewHolder, NewOrderModel model, int position) {
+
+
+                if(model.getSoupNP()==0 && model.getWingsNP() == 0 && model.getMushNP() == 0){
+                    viewHolder.starterTV.setVisibility(View.GONE);
+                }
+
+
+                if(model.getBeefNP()==0 && model.getChickenNP() == 0 && model.getPizzaNP() == 0 && model.getSizzlerNP() == 0&& model.getBurgerNP() == 0){
+                    viewHolder.mainsTV.setVisibility(View.GONE);
+                }
+
+                if(model.getCakeNP()==0 && model.getPieNP() == 0 && model.getPancakeNP() == 0){
+                    viewHolder.dessertsTV.setVisibility(View.GONE);
+                }
+
+                if(model.getCokeNP()==0 && model.getWaterNP() == 0){
+                    viewHolder.drinksTV.setVisibility(View.GONE);
+                }
+
+
 
                 if (model.getBeefNP() == 0) {
                     viewHolder.beefTV.setVisibility(View.GONE);
                 } else {
-                    viewHolder.beefTV.setText("[M]  Roast Beef: " +"- ("+ model.getBeefNP()+")");
+                    viewHolder.beefTV.setText("Roast Beef: " +" ( "+ model.getBeefNP()+" )");
                 }
                 if (model.getChickenNP() == 0) {
                     viewHolder.chickenTV.setVisibility(View.GONE);
                 } else {
-                    viewHolder.chickenTV.setText("[M]  Roast Chicken: " +"- ("+ model.getChickenNP()+")");
+                    viewHolder.chickenTV.setText("Roast Chicken: " +" ( "+ model.getChickenNP()+" )");
                 }
+
 
 
                 if (model.getSoupNP() == 0) {
                     viewHolder.soupTV.setVisibility(View.GONE);
                 } else {
-                    viewHolder.soupTV.setText("[S]   Soup of the Day: " +"- ("+ model.getSoupNP()+")");
+                    viewHolder.soupTV.setText("Soup of the Day: " +" ( "+ model.getSoupNP()+" )");
                 }
                 if (model.getWingsNP() == 0) {
                     viewHolder.chickenWingsTV.setVisibility(View.GONE);
                 } else {
-                    viewHolder.chickenWingsTV.setText("[S]   BBQ Chicken Wings: " +"- ("+ model.getWingsNP()+")");
+                    viewHolder.chickenWingsTV.setText("BBQ Chicken Wings: " +" ( "+ model.getWingsNP()+" )");
                 }
 
                 if (model.getMushNP() == 0) {
                     viewHolder.mushTV.setVisibility(View.GONE);
                 } else {
-                    viewHolder.mushTV.setText("[S]   Garlic Mushrooms: " +"- ("+ model.getMushNP()+")");
+                    viewHolder.mushTV.setText("Garlic Mushrooms: " +" ( "+ model.getMushNP()+" )");
                 }
                 if (model.getBurgerNP() == 0) {
                     viewHolder.beefBurgerTV.setVisibility(View.GONE);
                 } else {
-                    viewHolder.beefBurgerTV.setText("[M]  8oz Beef Burger: " +"- ("+ model.getBurgerNP()+")");
+                    viewHolder.beefBurgerTV.setText("8oz Beef Burger: " +" ( "+ model.getBurgerNP()+" )");
                 }
                 if (model.getPizzaNP() == 0) {
                     viewHolder.pizzaTV.setVisibility(View.GONE);
                 } else {
-                    viewHolder.pizzaTV.setText("[M]  Meat Feast Pizza: "+"- (" + model.getPizzaNP()+")");
+                    viewHolder.pizzaTV.setText("Meat Feast Pizza: "+" ( " + model.getPizzaNP()+" )");
                 }
                 if (model.getMessage() == null) {
                     viewHolder.messageTV.setVisibility(View.GONE);
@@ -97,35 +122,39 @@ public class ViewOrders extends AppCompatActivity{
                 if (model.getSizzlerNP() == 0) {
                     viewHolder.chickenSizzlerTV.setVisibility(View.GONE);
                 } else {
-                    viewHolder.chickenSizzlerTV.setText("[M]  Chicken Sizzler: " +"- ("+ model.getSizzlerNP()+")");
+                    viewHolder.chickenSizzlerTV.setText("Chicken Sizzler: " +" ( "+ model.getSizzlerNP()+" )");
                 }
                 if (model.getCakeNP() == 0) {
                     viewHolder.cakeTV.setVisibility(View.GONE);
                 } else {
-                    viewHolder.cakeTV.setText("[D]   Chocolate Cake: " +"- ("+ model.getCakeNP()+")");
+                    viewHolder.cakeTV.setText("Chocolate Cake: " +" ( "+ model.getCakeNP()+" )");
                 }
                 if (model.getPieNP() == 0) {
                     viewHolder.pieTV.setVisibility(View.GONE);
                 } else {
-                    viewHolder.pieTV.setText("[D]   Hot Apple Pie: "+"- ("+ model.getPieNP()+")");
+                    viewHolder.pieTV.setText("Hot Apple Pie: "+" ( "+ model.getPieNP()+" )");
                 }
                 if (model.getPancakeNP() == 0) {
                     viewHolder.pancakeTV.setVisibility(View.GONE);
                 } else {
-                    viewHolder.pancakeTV.setText("[D]   Pancake Pleasure: "+"- (" + model.getPancakeNP()+")");
+                    viewHolder.pancakeTV.setText("Pancake Pleasure: "+" ( " + model.getPancakeNP()+" )");
                 }
                 if (model.getWaterNP() == 0) {
                     viewHolder.waterTV.setVisibility(View.GONE);
                 } else {
-                    viewHolder.waterTV.setText("Water: "+"- (" + model.getWaterNP()+")");
+                    viewHolder.waterTV.setText("Water: "+" ( " + model.getWaterNP()+" )");
                 }
                 if (model.getCokeNP() == 0) {
                     viewHolder.cokeTV.setVisibility(View.GONE);
                 } else {
-                    viewHolder.cokeTV.setText("Coke: " +"- ("+ model.getCokeNP()+")");
+                    viewHolder.cokeTV.setText("Coke: " +" ( "+ model.getCokeNP()+" )");
                 }
 
-            }
+
+
+                }
+
+
         };
 
         recView.setAdapter(adapter);

@@ -22,7 +22,10 @@ public class OrdersViewHolder extends RecyclerView.ViewHolder {
     public TextView cokeTV;
     public TextView waterTV;
     public TextView messageTV;
-
+    public TextView starterTV;
+    public TextView mainsTV;
+    public TextView dessertsTV;
+    public TextView drinksTV;
 
     public OrdersViewHolder(View itemView) {
         super(itemView);
@@ -40,10 +43,10 @@ public class OrdersViewHolder extends RecyclerView.ViewHolder {
         cokeTV = itemView.findViewById(R.id.cokeTV);
         waterTV = itemView.findViewById(R.id.waterTV);
         messageTV = itemView.findViewById(R.id.messageTV);
-
-
-
-
+        starterTV = itemView.findViewById(R.id.startersTV);
+        mainsTV = itemView.findViewById(R.id.mainsTV);
+        dessertsTV = itemView.findViewById(R.id.dessertsTV);
+        drinksTV = itemView.findViewById(R.id.drinksTV);
     }
 
 }
