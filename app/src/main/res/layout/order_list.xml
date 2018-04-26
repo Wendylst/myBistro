@@ -257,23 +257,29 @@
             </LinearLayout>
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-            <Button
-                android:id="@+id/deleteBT"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button"
-                android:paddingBottom="10dp"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"/>
+    android:layout_height="match_parent"
+    android:layout_marginTop="30dp">
+
+    <Button
+        android:id="@+id/deleteBT"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@color/colorPrimaryDark"
+        android:padding="10dp"
+        android:text="Delete"
+        android:textColor="@android:color/white" />
+
     <Button
         android:id="@+id/updateBT"
-        android:layout_width="match_parent"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:text="Button"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp"/>
+        android:text="Update"
+        android:padding="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimaryDark"/>
 
 </RelativeLayout>
         </LinearLayout>

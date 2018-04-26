@@ -15,8 +15,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker;
 import com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPickerListener;
 
@@ -47,9 +50,11 @@ public class NewOrder extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_order);
 
-        database = FirebaseDatabase.getInstance();
-        myRef = database.getReference().child("My Bistro").child("Orders");
-        myRefNew = myRef.push();
+        if (getIntent().hasExtra("orderID")) {
+            ID = getIntent().getExtras().getString("orderID");
+            orderID = ID;
+        }
+
         mushNP = findViewById(R.id.mushNP);
         soupNP = findViewById(R.id.soupNP);
         wingsNP = findViewById(R.id.wingsNP);
@@ -63,6 +68,98 @@ public class NewOrder extends AppCompatActivity {
         pancakeNP = findViewById(R.id.pancakeNP);
         cokeNP = findViewById(R.id.cokeNP);
         waterNP = findViewById(R.id.waterNP);
+
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference().child("My Bistro").child("Orders");
+        if (ID != null && !ID.equalsIgnoreCase("")) {
+            myRefNew = myRef.child(ID);
+            myRefNew.addListenerForSingleValueEvent(
+                    new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            dataToSave = dataSnapshot.getValue(NewOrderModel.class);
+                            int garlic = dataToSave.getMushNP();
+                            if (garlic > 0) {
+                                mushCB.setChecked(true);
+                                mushNP.setValue(garlic);
+                            }
+                            int soup = dataToSave.getSoupNP();
+                            if (soup > 0) {
+                                soupCB.setChecked(true);
+                                soupNP.setValue(soup);
+                            }
+                            int wings = dataToSave.getWingsNP();
+                            if (wings > 0) {
+                                wingsCB.setChecked(true);
+                                wingsNP.setValue(wings);
+                            }
+                            int rbeef = dataToSave.getBeefNP();
+                            if (rbeef > 0) {
+                                beefCB.setChecked(true);
+                                beefNP.setValue(rbeef);
+                            }
+                            int rChicken = dataToSave.getChickenNP();
+                            if (rChicken > 0) {
+                                chickenCB.setChecked(true);
+                                chickenNP.setValue(rChicken);
+                            }
+                            int burger = dataToSave.getBurgerNP();
+                            if (burger > 0) {
+                                burgerCB.setChecked(true);
+                                burgerNP.setValue(burger);
+                            }
+                            int pizza = dataToSave.getPizzaNP();
+                            if (pizza > 0) {
+                                pizzaCB.setChecked(true);
+                                pizzaNP.setValue(pizza);
+                            }
+                            int sizzler = dataToSave.getSizzlerNP();
+                            if (sizzler > 0) {
+                                sizzlerCB.setChecked(true);
+                                sizzlerNP.setValue(sizzler);
+                            }
+                            int cake = dataToSave.getCakeNP();
+                            if (cake > 0) {
+                                cakeCB.setChecked(true);
+                                cakeNP.setValue(cake);
+                            }
+                            int pie = dataToSave.getPieNP();
+                            if (pie > 0) {
+                                pieCB.setChecked(true);
+                                pieNP.setValue(pie);
+                            }
+                            int pancake = dataToSave.getPancakeNP();
+                            if (pancake > 0) {
+                                pancakeCB.setChecked(true);
+                                pancakeNP.setValue(pancake);
+                            }
+                            int coke = dataToSave.getCokeNP();
+                            if (coke > 0) {
+                                cokeCB.setChecked(true);
+                                cokeNP.setValue(coke);
+                            }
+                            int water = dataToSave.getWaterNP();
+                            if (water > 0) {
+                                waterCB.setChecked(true);
+                                waterNP.setValue(water);
+                            }
+
+                            String message = dataToSave.getMessage();
+                            if (message != null) {
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                        }
+                    });
+        } else {
+            myRefNew = myRef.push();
+        }
+
+        dataToSave.setOrderID(myRefNew.getKey());
+        myRefNew.getRef().setValue(dataToSave);
+
 
 
         soupNP.setMaxValue(20);
@@ -385,9 +482,35 @@ public class NewOrder extends AppCompatActivity {
 
     public void addOrder(View view)
     {
+        LayoutInflater inflater = LayoutInflater.from(NewOrder.this);
+        AlertDialog.Builder builder;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            builder = new AlertDialog.Builder(NewOrder.this, android.R.style.Theme_Material_Dialog_Alert);
+        } else {
+            builder = new AlertDialog.Builder(NewOrder.this);
+        }
 
-        Toast.makeText(getApplicationContext(),"Order Created.", Toast.LENGTH_SHORT).show();
-        finish();
+        builder.setTitle("Confirm Order");
+
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getApplicationContext(),"Order Created.", Toast.LENGTH_SHORT).show();
+                finish();
+
+
+            }
+        });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(NewOrder.this, "Cancel", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        builder.show();
 
     }
 
@@ -395,7 +518,8 @@ public class NewOrder extends AppCompatActivity {
     //NUMBER PICKERS
     public void callAllNumberPickers(){
         Log.i("numberpicker","number pick2");
-        ID =  this.orderID;
+        ID = this.orderID;
+
         //openDialog();
 
         mushNP.setListener(new ScrollableNumberPickerListener() {

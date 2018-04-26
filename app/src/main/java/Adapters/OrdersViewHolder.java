@@ -2,6 +2,7 @@ package Adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import ie.app.bistro.mybistro.R;
@@ -26,6 +27,8 @@ public class OrdersViewHolder extends RecyclerView.ViewHolder {
     public TextView mainsTV;
     public TextView dessertsTV;
     public TextView drinksTV;
+    public Button updateBtn;
+    public Button deleteBtn;
 
     public OrdersViewHolder(View itemView) {
         super(itemView);
@@ -47,6 +50,8 @@ public class OrdersViewHolder extends RecyclerView.ViewHolder {
         mainsTV = itemView.findViewById(R.id.mainsTV);
         dessertsTV = itemView.findViewById(R.id.dessertsTV);
         drinksTV = itemView.findViewById(R.id.drinksTV);
+        updateBtn = itemView.findViewById(R.id.updateBT);
+        deleteBtn = itemView.findViewById(R.id.deleteBT);
     }
 
 }

@@ -1,18 +1,20 @@
 package ie.app.bistro.mybistro;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
+import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import Adapters.OrdersViewHolder;
 import Models.NewOrderModel;
@@ -60,33 +62,6 @@ public class ViewOrders extends AppCompatActivity{
             @Override
             protected void populateViewHolder(OrdersViewHolder viewHolder, NewOrderModel model, int position) {
 
-                   /* Button button = (Button) findViewById(R.id.deleteAll);
-                    button.setOnClickListener(new View.OnClickListener() {
-                        public void onClick(View v) {
-                            //orders.child(childKey).removeValue();
-                        }
-                    });
-
-                    new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            for (DataSnapshot child : dataSnapshot.getChildren()) {
-                                String childKey = child.getKey();
-                                orders.child(childKey).removeValue();
-                                //child.getKey();
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-                            System.out.println("The read failed: " + databaseError.getCode());
-                        }
-                    };
-
-                /*for( DataSnapshot child : orders.getChildren() ) {
-                    String childKey = child.getKey();
-
-                }*/
 
                 if(model.getSoupNP()==0 && model.getWingsNP() == 0 && model.getMushNP() == 0){
                     viewHolder.starterTV.setVisibility(View.GONE);
@@ -183,10 +158,55 @@ public class ViewOrders extends AppCompatActivity{
                 } else {
                     viewHolder.cokeTV.setText("Coke: " +" ( "+ model.getCokeNP()+" )");
                 }
+                String myOrderID = model.getOrderID();
+
+                viewHolder.updateBtn.setTag(myOrderID);
+                viewHolder.updateBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent startNewActivity = new Intent(ViewOrders.this, NewOrder.class);
+                        startNewActivity.putExtra("orderID",(String)v.getTag());
+                        startActivity(startNewActivity);
+                    }
+                });
+                viewHolder.deleteBtn.setTag(myOrderID);
+                viewHolder.deleteBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        AlertDialog.Builder builder;
+                        final String orderID = (String)v.getTag();
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            builder = new AlertDialog.Builder(ViewOrders.this, android.R.style.Theme_Material_Dialog_Alert);
+                            getWindow().setSoftInputMode(
+                                    WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE
+                            );
+                        } else {
+                            builder = new AlertDialog.Builder(ViewOrders.this);
+                        }
+
+                        builder.setTitle("Are you sure you want to delete this order?");
+
+                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                System.out.println(orders);
+                                orders.child(orderID).removeValue();
+                            }
+                        });
+
+                        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(ViewOrders.this, "Cancel", Toast.LENGTH_LONG).show();
+                            }
+                        });
+
+                        builder.show();
+                    }
+                });
 
 
-
-                }
+            }
 
         };
 
