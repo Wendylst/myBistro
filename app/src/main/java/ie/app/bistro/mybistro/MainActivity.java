@@ -30,23 +30,23 @@ public class MainActivity extends AppCompatActivity{
     private RecyclerView.Adapter adapter;
     private List<ListItemMain> listItems;
 
-    DatabaseReference myDb = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
 
-
+/*
     public void newOrder(View view){
 
         Intent startNewActivity = new Intent(this,NewOrder.class);
         startActivity(startNewActivity);
-        Toast.makeText(getApplicationContext(),"Who you are tomorrow begins with what you do today.", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),"Who you are tomorrow begins with what you do today.", Toast.LENGTH_SHORT).show();
     }
 
     public void viewOrder(View view){
 
         Intent startNewActivity = new Intent(this, ViewOrders.class);
         startActivity(startNewActivity);
-        Toast.makeText(getApplicationContext(),"Who you are tomorrow begins with what you do today.", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),"Who you are tomorrow begins with what you do today.", Toast.LENGTH_SHORT).show();
     }
-
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
 
-
+/*
     public void NewOrderButton(View view) {
 
         Intent startNewActivity = new Intent(this, NewOrder.class);
@@ -81,5 +81,5 @@ public class MainActivity extends AppCompatActivity{
         startActivity(startNewActivity);
         Toast.makeText(getApplicationContext(), "View Order", Toast.LENGTH_SHORT).show();
     }
-
+*/
 }

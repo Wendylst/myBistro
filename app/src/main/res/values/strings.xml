@@ -4,4 +4,5 @@
     <string name="main_view_image">main view image</string>
     <string name="newOrder">New Order</string>
     <string name="viewOrder">View Order</string>
+    <string name="breakBetween">Break</string>
 </resources>

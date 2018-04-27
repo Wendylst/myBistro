@@ -1,9 +1,7 @@
 package Adapters;
 
-import android.app.LauncherActivity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +12,6 @@ import android.widget.Toast;
 import java.util.List;
 
 import Models.ListItemMain;
-import ie.app.bistro.mybistro.MainActivity;
 import ie.app.bistro.mybistro.NewOrder;
 import ie.app.bistro.mybistro.R;
 import ie.app.bistro.mybistro.SplashWelcome;
@@ -77,11 +74,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             case 0:
                 Intent intent = new Intent(context, NewOrder.class);
                 context.startActivity(intent);
+                finish();
                 break;
 
             case 1:
                 Intent intent2 = new Intent(context, ViewOrders.class);
                 context.startActivity(intent2);
+                finish();
                 break;
 
             default:
@@ -92,5 +91,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
 
     }
+
+        private void finish() {
+        }
     }
 }

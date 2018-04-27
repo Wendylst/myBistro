@@ -31,9 +31,7 @@
 
         <activity android:name=".ViewOrders"
             android:label="@string/viewOrder"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait"/>
 
     </application>
 

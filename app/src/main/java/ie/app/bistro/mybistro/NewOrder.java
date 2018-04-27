@@ -1,6 +1,7 @@
 package ie.app.bistro.mybistro;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -41,7 +42,7 @@ public class NewOrder extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference myRef;
     String ID;
-    String orderID = UUID.randomUUID().toString();
+    String orderID; //= UUID.randomUUID().toString();
     NewOrderModel dataToSave = new NewOrderModel();
     DatabaseReference myRefNew;
 
@@ -482,7 +483,7 @@ public class NewOrder extends AppCompatActivity {
 
     public void addOrder(View view)
     {
-        LayoutInflater inflater = LayoutInflater.from(NewOrder.this);
+        /*LayoutInflater inflater = LayoutInflater.from(NewOrder.this);
         AlertDialog.Builder builder;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             builder = new AlertDialog.Builder(NewOrder.this, android.R.style.Theme_Material_Dialog_Alert);
@@ -511,7 +512,10 @@ public class NewOrder extends AppCompatActivity {
         });
 
         builder.show();
-
+*/      Intent startNewActivity = new Intent(this,ViewOrders.class);
+        startActivity(startNewActivity);
+        Toast.makeText(getApplicationContext(),"Order Created.", Toast.LENGTH_SHORT).show();
+        finish();
     }
 
 

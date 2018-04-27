@@ -30,12 +30,16 @@ public class ViewOrders extends AppCompatActivity{
 
     FirebaseRecyclerAdapter<NewOrderModel, OrdersViewHolder> adapter;
 
-
+int i = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        /*for ( i = 1; i > 2; i++) {
+            finish();
+            startActivity(getIntent());
+        }*/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_orders);
+
         recView = findViewById(R.id.ordersView);
         recView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
@@ -160,6 +164,7 @@ public class ViewOrders extends AppCompatActivity{
                 }
                 String myOrderID = model.getOrderID();
 
+
                 viewHolder.updateBtn.setTag(myOrderID);
                 viewHolder.updateBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -169,6 +174,7 @@ public class ViewOrders extends AppCompatActivity{
                         startActivity(startNewActivity);
                     }
                 });
+
                 viewHolder.deleteBtn.setTag(myOrderID);
                 viewHolder.deleteBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -177,9 +183,9 @@ public class ViewOrders extends AppCompatActivity{
                         final String orderID = (String)v.getTag();
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                             builder = new AlertDialog.Builder(ViewOrders.this, android.R.style.Theme_Material_Dialog_Alert);
-                            getWindow().setSoftInputMode(
-                                    WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE
-                            );
+                            //getWindow().setSoftInputMode(
+                                   // WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE
+                           // );
                         } else {
                             builder = new AlertDialog.Builder(ViewOrders.this);
                         }
