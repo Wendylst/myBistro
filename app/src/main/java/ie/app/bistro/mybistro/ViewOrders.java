@@ -33,10 +33,10 @@ public class ViewOrders extends AppCompatActivity{
 int i = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        /*for ( i = 1; i > 2; i++) {
+        for ( i = 1; i > 2; i++) {
             finish();
             startActivity(getIntent());
-        }*/
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_orders);
 
